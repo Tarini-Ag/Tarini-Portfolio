@@ -1,20 +1,78 @@
 # Tarini Agarwal – Portfolio
 
-Single-page React portfolio (React + Tailwind + Babel loaded from CDNs, so no build step).
+A modern, responsive portfolio showcasing my skills, projects, and experience in **Machine Learning**, **Data Science**, and **Full-Stack Development**.
 
-## Run locally
-Needs an internet connection (CDN scripts + Google Fonts).
+🌐 **Live:** [Not yet live]
 
-    cd tarini-portfolio
-    python -m http.server 8000
+---
 
-Then open http://localhost:8000
+## About
 
-(Double-clicking index.html also works in most browsers.)
+This is a Next.js-based portfolio built with modern web technologies. It features:
 
-## Files
-- index.html – the whole site
-- profile.png – profile photo
-- tarini_agarwal_resume.pdf – resume linked from the site
-- favicon.svg – simple placeholder icon (replace if you had a custom one)
-- extras/nextjs-config – config files from a planned Next.js migration (no src/ folder, so not runnable on their own)
+- **Clean, professional design** with a purple & orange accent color palette
+- **Responsive layout** that works on desktop, tablet, and mobile
+- **Skills showcase** organized by proficiency categories
+- **Project highlights** with descriptions and links
+- **Experience timeline** with key roles and achievements
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Hosting:** Vercel
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+  
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Tarini-Ag/tarini-portfolio.git
+cd tarini-portfolio
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+Open http://localhost:3000 in your browser to see the site.
+
+---
+
+## Project Structure
+
+```
+├── src/
+│   ├── app/              # Next.js app directory
+│   ├── components/       # React components
+│   └── styles/           # Tailwind CSS files
+├── public/               # Static assets (images, icons)
+├── package.json          # Dependencies & scripts
+├── tsconfig.json         # TypeScript config
+└── tailwind.config.js    # Tailwind configuration
+```
+
+---
+
+## Key Sections
+
+- **Header:** Name, title, and quick navigation
+- **About:** Brief introduction and key highlights
+- **Skills:** Primary and secondary proficiencies (organized by category)
+- **Experience:** ML Intern & Class Representative roles
+- **Projects:** Key project highlights with descriptions
+- **Certificates:** Verified credentials from IBM SkillsBuild
+
+---
