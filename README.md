@@ -1,6 +1,6 @@
 # Tarini Agarwal – Portfolio
 
-A modern, responsive portfolio showcasing my skills, projects, and experience in **Machine Learning**, **Data Science**, and **Full-Stack Development**.
+A modern, responsive portfolio showcasing my skills, projects, and experience in **Machine Learning**, **Data Science** and **AI**.
 
 🌐 **Live:** https://tarini-agarwal-portfolio.vercel.app/
 
