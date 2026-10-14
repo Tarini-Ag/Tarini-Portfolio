@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio showcasing my skills, projects, and experience in **Machine Learning**, **Data Science**, and **Full-Stack Development**.
 
-🌐 **Live:** [Not yet live]
+🌐 **Live:** https://tarini-agarwal-portfolio.vercel.app/
 
 ---
 
