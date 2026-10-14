@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarini Agarwal | Data Science & AI Dataset</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <!-- Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#108991',
+              neon: '#00FF66',
+              accent: '#34D399',
+              blue: '#3882F6',
+              purple: '#8B5CF6',
+              orange: '#F59E0B',
+              cyan: '#06B6D4',
+              yellow: '#FACC15',
+              gray: '#6B7280'
+            },
+            dark: {
+              bg: '#080C14',
+              surface: '#0F172A',
+              card: '#1E293B',
+              border: '#334155',
+              header: '#0B132B',
+              hover: '#1E293B'
+            },
+            light: {
+              bg: '#F8FAFC',
+              surface: '#FFFFFF',
+              card: '#F1F5F9',
+              border: '#E2E8F0',
+              header: '#F1F5F9',
+              hover: '#E2E8F0'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <!-- React & Babel CDNs -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    * {
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .dark ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #080C14;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #108991;
+      border-radius: 5px;
+      border: 2px solid #080C14;
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: #00FF66;
+    }
+    .light ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    .light ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    .light ::-webkit-scrollbar-thumb {
+      background: #94A3B8;
+      border-radius: 5px;
+      border: 2px solid #F1F5F9;
+    }
+    .light ::-webkit-scrollbar-thumb:hover {
+      background: #108991;
+    }
+
+    /* CUSTOM THIN ROUNDED SCROLLBAR FOR CERTIFICATES CELL */
+    .custom-cert-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-cert-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-cert-scroll::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.35);
+      border-radius: 9999px;
+    }
+    .custom-cert-scroll:hover::-webkit-scrollbar-thumb {
+      background: rgba(139, 92, 246, 0.6);
+    }
+    .dark .custom-cert-scroll::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.2);
+    }
+    .dark .custom-cert-scroll:hover::-webkit-scrollbar-thumb {
+      background: rgba(168, 85, 247, 0.6);
+    }
+
+    /* ABOUT ME CARD STYLING (OPTIMIZED LIGHT & DARK MODE) */
+    .about-me-card {
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.025), rgba(59, 130, 246, 0.025)), #ffffff;
+      border: 1px solid #d0d8e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .dark .about-me-card {
+      background: #1E293B;
+      border: 1px solid #334155;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-light-bg text-slate-900 dark:bg-dark-bg dark:text-slate-100 font-sans antialiased">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    // --- DATASET DEFINITION ---
+    const DATASET = {
+      about: {
+        name: "Tarini Agarwal",
+        tagline: "Aspiring Data Scientist",
+        subTagline: "AI & Machine Learning Enthusiast",
+        metadata: [
+          { label: "Dataset Name", value: "portfolio.csv" },
+          { label: "Version", value: "v2.0" },
+          { label: "Last Updated", value: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) },
+          { label: "Primary Domain", value: "Artificial Intelligence" },
+          { label: "Current Focus", value: "Data Science & Machine Learning" },
+          { label: "Status", value: "Learning • Building • Exploring" },
+          { label: "Location", value: "New Delhi, India" }
+        ]
+      },
+      education: {
+        university: {
+          institution: "University School of Automation and Robotics (USAR), GGSIPU",
+          degree: "B.Tech in Artificial Intelligence & Data Science",
+          period: "2024 – 2028",
+          currentSem: "Semester 5",
+          currentCgpa: "8.93 / 10",
+          percentage: "82.70%",
+          backlogs: "0",
+          location: "New Delhi, India",
+          coreFocus: "Machine Learning • Data Analysis • Computer Vision"
+        },
+        semesters: [
+          { sem: 1, label: "Sem 1", sgpa: 8.72, credits: 29, year: "2024 – 2025 (Year 1)", status: "Completed" },
+          { sem: 2, label: "Sem 2", sgpa: 8.76, credits: 29, year: "2024 – 2025 (Year 1)", status: "Completed" },
+          { sem: 3, label: "Sem 3", sgpa: 9.08, credits: 26, year: "2025 – 2026 (Year 2)", status: "Completed" },
+          { sem: 4, label: "Sem 4", sgpa: 9.14, credits: 28, year: "2025 – 2026 (Year 2)", status: "Completed" },
+          { sem: 5, label: "Sem 5", sgpa: "Upcoming", credits: 24, year: "2026 – 2027 (Year 3)", status: "In Progress" },
+          { sem: 6, label: "Sem 6", sgpa: "Upcoming", credits: 24, year: "2026 – 2027 (Year 3)", status: "Upcoming" },
+          { sem: 7, label: "Sem 7", sgpa: "Upcoming", credits: 22, year: "2027 – 2028 (Year 4)", status: "Upcoming" },
+          { sem: 8, label: "Sem 8", sgpa: "Upcoming", credits: 20, year: "2027 – 2028 (Year 4)", status: "Upcoming" }
+        ],
+        stats: {
+          cgpa: "8.93",
+          percentage: "82.70%",
+          highestSgpa: "9.14",
+          currentSem: "5",
+          completedCredits: "112",
+          backlogs: "0"
+        },
+        school: {
+          institution: "Delhi Public School, RK Puram",
+          board: "CBSE",
+          stream: "Science Stream (PCM + CS)",
+          period: "2020 – 2024",
+          percentage: "92%"
+        }
+      },
+      skills: {
+        technicalDomains: [
+          {
+            id: "prog",
+            title: "Programming & Query",
+            icon: "🖥",
+            countLabel: "6 Skills",
+            items: ["Python", "SQL", "R", "HTML", "CSS", "C"]
+          },
+          {
+            id: "analysis",
+            title: "Data Analysis & Visualization",
+            icon: "📊",
+            countLabel: "4 Skills",
+            items: ["Pandas", "NumPy", "Matplotlib", "Seaborn"]
+          },
+          {
+            id: "ml",
+            title: "AI & Machine Learning",
+            icon: "🤖",
+            countLabel: "7 Skills",
+            items: ["Scikit-learn", "YOLO", "Computer Vision", "OCR", "Prompt Engineering", "AI-Assisted Development", "n8n"]
+          },
+          {
+            id: "tools",
+            title: "Developer Tools",
+            icon: "🛠",
+            countLabel: "6 Skills",
+            items: ["Jupyter Notebook", "VS Code", "Git", "GitHub", "MySQL", "Anaconda"]
+          },
+          {
+            id: "ds-skills",
+            title: "Data Science Skills",
+            icon: "🧠",
+            countLabel: "6 Skills",
+            items: ["Data Cleaning", "Data Preprocessing", "Pattern Recognition", "Statistical Analysis", "Classification Models", "Exploratory Data Analysis (EDA)"]
+          }
+        ],
+        professionalSkills: [
+          "Analytical Thinking",
+          "Problem Solving",
+          "Team Collaboration",
+          "Adaptability",
+          "Leadership",
+          "Communication",
+          "Public Speaking"
+        ],
+        languages: ["English", "Hindi"]
+      },
+      certificates: [
+        {
+          id: "ibm-py",
+          slug: "data-analysis-python",
+          title: "Data Analysis Using Python",
+          issuer: "IBM SkillsBuild",
+          issuerIcon: "IBM",
+          badgeColor: "bg-blue-600 text-white",
+          date: "Completed 2026",
+          status: "Completed",
+          skills: ["Python", "Pandas", "NumPy", "Data Cleaning", "Data Visualization"],
+          desc: "Mastered data manipulation, exploratory data analysis, and data cleaning techniques using Python libraries like Pandas and NumPy.",
+          whatILearned: [
+            "Importing and exporting datasets from CSV and SQL sources into Pandas DataFrames",
+            "Handling missing values, outlier detection, and data transformation pipelines",
+            "Performing statistical exploratory data analysis (EDA) and hypothesis testing",
+            "Building clean visualizations with Matplotlib and Seaborn for business insights"
+          ],
+          verifyUrl: "https://skillsbuild.org"
+        },
+        {
+          id: "ibm-df",
+          slug: "data-fundamentals",
+          title: "Data Fundamentals",
+          issuer: "IBM SkillsBuild",
+          issuerIcon: "IBM",
+          badgeColor: "bg-blue-600 text-white",
+          date: "Completed 2025",
+          status: "Completed",
+          skills: ["Data Architectures", "Database Basics", "Data Lifecycle", "SQL"],
+          desc: "Gained core foundational knowledge in data storage, database management systems, data governance, and data processing lifecycles.",
+          whatILearned: [
+            "Core principles of relational and non-relational database architectures",
+            "Data governance, compliance, and ethical considerations in enterprise AI",
+            "Structuring queries for data extraction and multi-table joins in MySQL",
+            "Understanding data pipeline workflows from ingestion to analytics"
+          ],
+          verifyUrl: "https://skillsbuild.org"
+        },
+        {
+          id: "ibm-ai",
+          slug: "make-agentic-ai-work-for-you",
+          title: "Make Agentic AI Work for You",
+          issuer: "IBM SkillsBuild",
+          issuerIcon: "IBM",
+          badgeColor: "bg-blue-600 text-white",
+          date: "Completed 2026",
+          status: "Completed",
+          skills: ["Agentic AI", "Prompt Engineering", "LLMs", "n8n Workflows"],
+          desc: "Explored state-of-the-art autonomous AI agents, multi-agent orchestrations, prompt engineering strategies, and workflow automation.",
+          whatILearned: [
+            "Designing autonomous AI agent loops with tool usage capabilities",
+            "Structuring multi-agent communication protocols and task delegation",
+            "Implementing prompt engineering techniques for predictable LLM outputs",
+            "Automating enterprise tasks using agentic workflows in n8n and API calls"
+          ],
+          verifyUrl: "https://skillsbuild.org"
+        },
+        {
+          id: "ibm-gd",
+          slug: "getting-started-with-data",
+          title: "Getting Started with Data",
+          issuer: "IBM SkillsBuild",
+          issuerIcon: "IBM",
+          badgeColor: "bg-blue-600 text-white",
+          date: "Completed 2025",
+          status: "Completed",
+          skills: ["Data Literacy", "Exploratory Analysis", "Data Types", "Spreadsheets"],
+          desc: "Introductory course focusing on data literacy, data types, foundational spreadsheet analysis, and analytical thinking.",
+          whatILearned: [
+            "Understanding numerical, categorical, and structured vs unstructured data types",
+            "Basic statistical summarization including mean, median, variance, and standard deviation",
+            "Data formatting, pivot tables, and visualization fundamentals",
+            "Applying analytical thinking to break down business problems"
+          ],
+          verifyUrl: "https://skillsbuild.org"
+        },
+        {
+          id: "gcp-setup",
+          slug: "set-up-google-cloud",
+          title: "Set Up Google Cloud",
+          issuer: "Google",
+          issuerIcon: "Google",
+          badgeColor: "bg-emerald-600 text-white",
+          date: "Completed 2025",
+          status: "Completed",
+          skills: ["Google Cloud", "GCP Console", "IAM", "Cloud Storage"],
+          desc: "Hands-on foundation in initializing Google Cloud projects, setting up IAM roles, configuring Cloud Storage buckets, and managing cloud resources.",
+          whatILearned: [
+            "Navigating the Google Cloud Console and gcloud CLI environments",
+            "Setting up identity and access management (IAM) permissions securely",
+            "Creating and managing Google Cloud Storage buckets for data assets",
+            "Monitoring resource usage and configuring billing alerts"
+          ],
+          verifyUrl: "https://cloud.google.com"
+        },
+        {
+          id: "gcp-web",
+          slug: "build-a-website-on-google-cloud",
+          title: "Build a Website on Google Cloud",
+          issuer: "Google",
+          issuerIcon: "Google",
+          badgeColor: "bg-emerald-600 text-white",
+          date: "Completed 2025",
+          status: "Completed",
+          skills: ["Compute Engine", "Web Deployment", "Cloud Run", "DNS"],
+          desc: "Deployed scalable web applications using Google Cloud Compute Engine virtual machines, Cloud Run containers, and load balancers.",
+          whatILearned: [
+            "Provisioning Linux virtual machine instances on Compute Engine",
+            "Deploying containerized web applications using Google Cloud Run",
+            "Configuring firewall rules, HTTP load balancing, and custom domain routing",
+            "Ensuring uptime and monitoring server performance metrics"
+          ],
+          verifyUrl: "https://cloud.google.com"
+        },
+        {
+          id: "gcp-ml",
+          slug: "use-machine-learning-apis",
+          title: "Use Machine Learning APIs",
+          issuer: "Google",
+          issuerIcon: "Google",
+          badgeColor: "bg-emerald-600 text-white",
+          date: "Completed 2025",
+          status: "Completed",
+          skills: ["Vision API", "Natural Language API", "Translation API", "Python SDK"],
+          desc: "Utilized Google Cloud pre-trained AI and Machine Learning APIs including Vision API for image analysis and Natural Language API for sentiment extraction.",
+          whatILearned: [
+            "Integrating Google Cloud Vision API for object detection and OCR",
+            "Extracting entities, sentiment, and syntax using Natural Language API",
+            "Processing audio transcripts and language translation via cloud endpoints",
+            "Connecting Python application backends to GCP AI API services"
+          ],
+          verifyUrl: "https://cloud.google.com"
+        },
+        {
+          id: "gcp-gcc",
+          slug: "the-basics-of-gcc",
+          title: "The Basics of GCC",
+          issuer: "Google",
+          issuerIcon: "Google",
+          badgeColor: "bg-emerald-600 text-white",
+          date: "Completed 2025",
+          status: "Completed",
+          skills: ["Google Cloud Computing", "Cloud Architecture", "Serverless", "BigQuery"],
+          desc: "Comprehensive overview of Google Cloud Computing infrastructure, serverless execution paradigms, data warehousing with BigQuery, and cloud security.",
+          whatILearned: [
+            "Understanding core cloud service models (IaaS, PaaS, SaaS) on Google Cloud",
+            "Overview of BigQuery for petabyte-scale data warehousing and SQL queries",
+            "Serverless architecture concepts with Cloud Functions and App Engine",
+            "Cloud security best practices and compliance frameworks"
+          ],
+          verifyUrl: "https://cloud.google.com"
+        },
+        {
+          id: "cisco-iot",
+          slug: "introduction-to-iot",
+          title: "Introduction to IoT",
+          issuer: "Cisco Networking Academy",
+          issuerIcon: "Cisco",
+          badgeColor: "bg-cyan-700 text-white",
+          date: "Completed 2024",
+          status: "Completed",
+          skills: ["Internet of Things", "Sensors", "Edge Computing", "Network Security"],
+          desc: "Explored Internet of Things (IoT) ecosystems, sensor networks, edge data processing, and cybersecurity protocols connecting smart devices.",
+          whatILearned: [
+            "Architecture of IoT systems and sensor data collection nodes",
+            "Edge computing vs cloud computing data processing paradigms",
+            "Connecting microcontrollers to network endpoints safely",
+            "Cybersecurity fundamentals for connected IoT hardware and networks"
+          ],
+          verifyUrl: "https://netacad.com"
+        }
+      ],
+      experience: [
+        {
+          id: "nicsi",
+          role: "ML Intern",
+          organization: "NICSI (Noida)",
+          period: "Jun 2026 - Aug 2026",
+          desc: "Worked on AI-powered Vehicle Inspection & Fraud Detection System using YOLO vision models and data analysis.",
+          bullets: [
+            "Contributed to development of an AI-powered Vehicle Inspection and Fraud Detection System, processing and annotating 1000+ vehicle images for damages detection, number plate recognition, and verification of 30+ vehicle attributes.",
+            "Streamlined inspection workflows using YOLO-based computer vision models, reducing manual assessment efforts and improving data pipeline efficiency.",
+            "Performed data cleaning, annotation and exploratory analysis on large datasets to identify patterns and support model accuracy improvements."
+          ]
+        },
+        {
+          id: "cr",
+          role: "Class Representative",
+          organization: "USAR, GGSIPU",
+          period: "Aug 2025 - Present",
+          desc: "Representing and supporting a cohort of 70+ students, coordinating between students and faculty.",
+          bullets: [
+            "Coordinated between students and faculties, managed communication for a cohort of 70+ students, and represented batch interest in departmental discussions."
+          ]
+        },
+        {
+          id: "anugoonj",
+          role: "Anchor",
+          organization: "ANUGOONJ - USAR",
+          period: "Feb 2026",
+          desc: "Hosted college cultural fest with 20,000+ attendees as the main anchor.",
+          bullets: [
+            "Hosted stage events at GGSIPU's flagship annual cultural festival with over 20,000 attendees, demonstrating strong public speaking, audience engagement, and event coordination skills."
+          ]
+        }
+      ],
+      projects: [
+        {
+          id: "mindlink",
+          name: "MindLink",
+          subtitle: "AI Powered Mental Wellness Assistant",
+          icon: "🧠",
+          tags: ["AI/ML", "NLP", "Mental Health"],
+          award: "🏆 1M1B Hackathon Winner",
+          shortDesc: "AI companion providing mental wellness support through conversational assistance and mood tracking.",
+          fullDesc: "MindLink is an AI-driven mental wellness companion designed to provide empathetic support, mood tracking, and personalized recommendations using NLP and machine learning.",
+          keyFeatures: [
+            "Conversational AI support with sentiment tracking",
+            "Mood tracking & healthcare analytics dashboard",
+            "Personalized wellness and reflection prompts",
+            "Secure & private user data handling"
+          ],
+          techStack: ["Python", "NLP", "Scikit-learn", "Streamlit", "Pandas"],
+          github: "https://github.com/Tarini-Ag"
+        },
+        {
+          id: "suraksha",
+          name: "SURAKSHA+",
+          subtitle: "Emergency Civic Issue Reporting Platform",
+          icon: "🛡️",
+          tags: ["Web", "Civic Tech", "AI"],
+          award: "⭐ Top 50 Finalist - Delhi AI Grind",
+          shortDesc: "AI-powered platform for citizens to report and track municipal issues with smart routing.",
+          fullDesc: "Built an emergency response platform with real-time alerts and structured complaint tracking system, generating dashboards for civic transparency and accountability.",
+          keyFeatures: [
+            "Real-time civic complaint alert system",
+            "Data collection pipelines from multiple sources",
+            "Interactive analytics dashboards for stakeholders",
+            "Automated priority routing for municipal teams"
+          ],
+          techStack: ["Python", "Dashboards", "Data Pipelines", "SQL"],
+          github: "https://github.com/Tarini-Ag"
+        },
+        {
+          id: "traffic",
+          name: "Traffic Control Solution",
+          subtitle: "Smart Traffic Management System",
+          icon: "🚦",
+          tags: ["Computer Vision", "IoT", "AI"],
+          award: "🚦 Smart India Hackathon",
+          shortDesc: "Intelligent traffic management system using computer vision and real-time analytics.",
+          fullDesc: "Built AI-powered dynamic scheduling for train route optimization using forecasting models to predict delays and passenger demand.",
+          keyFeatures: [
+            "Train route delay prediction forecasting",
+            "Dynamic timetable adjustment engine",
+            "Statistical analysis on large-scale scheduling data",
+            "Improved operational transit efficiency"
+          ],
+          techStack: ["Python", "Forecasting Models", "Statistical Analysis", "YOLO"],
+          github: "https://github.com/Tarini-Ag"
+        }
+      ],
+      achievements: [
+        { icon: "🥇", title: "1st Position", sub: "PitchMela (1M1B)", year: "2025" },
+        { icon: "🚀", title: "Top 50 Finalist", sub: "Delhi AI Grind", year: "2025" },
+        { icon: "🚦", title: "Smart India Hackathon", sub: "Participant / Finalist", year: "2024" }
+      ],
+      contact: {
+        phone: "+91 8920833836",
+        email: "04tarini@gmail.com",
+        location: "New Delhi, India",
+        github: "github.com/tarini-agarwal",
+        githubUrl: "https://github.com/Tarini-Ag",
+        linkedin: "linkedin.com/in/tarini-agarwal",
+        linkedinUrl: "https://linkedin.com/in/tarini-agarwal"
+      }
+    };
+
+    // --- SEMESTER-WISE ACADEMIC PROGRESS CHART COMPONENT ---
+    function SemesterProgressChart({ sems }) {
+      const [hoveredSem, setHoveredSem] = useState(null);
+
+      const svgWidth = 520;
+      const svgHeight = 140;
+      const paddingLeft = 55;
+      const paddingRight = 35;
+      const paddingTop = 22;
+      const paddingBottom = 25;
+
+      const minSGPA = 8.0;
+      const maxSGPA = 10.0;
+
+      const getX = (idx) => paddingLeft + (idx * (svgWidth - paddingLeft - paddingRight) / (sems.length - 1));
+      const getY = (val) => {
+        if (typeof val !== 'number') return svgHeight - paddingBottom;
+        const norm = (val - minSGPA) / (maxSGPA - minSGPA);
+        return svgHeight - paddingBottom - (norm * (svgHeight - paddingTop - paddingBottom));
+      };
+
+      const completedSems = sems.filter(s => typeof s.sgpa === 'number');
+      const completedPath = completedSems.map((s, i) => `${i === 0 ? 'M' : 'L'} ${getX(i)} ${getY(s.sgpa)}`).join(' ');
+
+      return (
+        <div className="p-4 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-2 relative font-sans">
+          <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-dark-border pb-2">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-blue-500" />
+              <span className="font-bold text-slate-800 dark:text-slate-200 text-xs tracking-wide">Academic Progression (SGPA Trend)</span>
+            </div>
+            <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2 py-0.5 rounded-lg border border-emerald-200/80 dark:border-emerald-500/30">
+              Peak: 9.14 SGPA
+            </span>
+          </div>
+
+          <div className="relative w-full overflow-hidden">
+            <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-auto overflow-visible select-none">
+              {/* Grid Lines */}
+              <line x1={paddingLeft - 10} y1={getY(10.0)} x2={svgWidth - paddingRight} y2={getY(10.0)} stroke="#E2E8F0" className="dark:stroke-slate-800" strokeDasharray="3 3" />
+              <line x1={paddingLeft - 10} y1={getY(9.0)} x2={svgWidth - paddingRight} y2={getY(9.0)} stroke="#E2E8F0" className="dark:stroke-slate-800" strokeDasharray="3 3" />
+              <line x1={paddingLeft - 10} y1={getY(8.5)} x2={svgWidth - paddingRight} y2={getY(8.5)} stroke="#E2E8F0" className="dark:stroke-slate-800" strokeDasharray="3 3" />
+
+              {/* Y Axis Labels */}
+              <text x={paddingLeft - 18} y={getY(10.0) + 4} textAnchor="end" className="text-[9px] font-mono fill-slate-400">10.0</text>
+              <text x={paddingLeft - 18} y={getY(9.0) + 4} textAnchor="end" className="text-[9px] font-mono fill-slate-400">9.0</text>
+              <text x={paddingLeft - 18} y={getY(8.5) + 4} textAnchor="end" className="text-[9px] font-mono fill-slate-400">8.5</text>
+
+              {/* Solid Line for Completed Semesters */}
+              <path d={completedPath} fill="none" stroke="#3882F6" strokeWidth="3" strokeLinecap="round" />
+
+              {/* Nodes */}
+              {sems.map((s, idx) => {
+                const cx = getX(idx);
+                const isCompleted = typeof s.sgpa === 'number';
+                const cy = isCompleted ? getY(s.sgpa) : getY(8.86);
+                const isHovered = hoveredSem?.sem === s.sem;
+
+                return (
+                  <g key={s.sem} className="cursor-pointer" onMouseEnter={() => setHoveredSem(s)} onMouseLeave={() => setHoveredSem(null)}>
+                    {isCompleted ? (
+                      <circle cx={cx} cy={cy} r={isHovered ? "6" : "4.5"} fill="#3882F6" className="transition-all duration-150" />
+                    ) : null}
+                    {isCompleted && (
+                      <text x={cx} y={cy - 9} textAnchor="middle" className="text-[9px] font-mono font-extrabold fill-slate-800 dark:fill-slate-100">{s.sgpa}</text>
+                    )}
+                    <text x={cx} y={svgHeight - 4} textAnchor="middle" className={`text-[10px] font-mono ${isHovered ? 'fill-blue-600 font-bold' : 'fill-slate-500 dark:fill-slate-400'}`}>
+                      {s.label}
+                    </text>
+                  </g>
+                );
+              })}
+            </svg>
+          </div>
+
+          {hoveredSem ? (
+            <div className="mt-1 p-2.5 rounded-xl bg-slate-900/95 dark:bg-dark-surface/95 text-white border border-slate-700/80 shadow-xl font-mono text-2xs space-y-1 backdrop-blur-md animate-fadeIn">
+              <div className="text-blue-400 font-bold text-xs flex items-center justify-between">
+                <span>Semester {hoveredSem.sem}</span>
+                <span className="text-[10px] text-slate-400 font-normal">{hoveredSem.status}</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-slate-300 pt-0.5">
+                <div>SGPA: <span className="font-bold text-emerald-400">{hoveredSem.sgpa}</span></div>
+                <div>Credits: <span className="font-semibold text-slate-100">{hoveredSem.credits}</span></div>
+                <div className="col-span-1 text-slate-400 truncate">{hoveredSem.year}</div>
+              </div>
+            </div>
+          ) : (
+            <div className="text-2xs font-mono text-slate-400 dark:text-slate-500 italic text-right pt-0.5">
+              Hover nodes to inspect semester SGPAs &amp; credits
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // --- ROW 0 SKILLS: PRIMARY PROFICIENCIES (COMPACT 3-COLUMN GHOST DESIGN) ---
+    function PrimarySkillsSection({ highlightText }) {
+      const primaryPillClass = "py-1.5 px-3.5 rounded-full bg-white dark:bg-dark-surface border border-slate-200 dark:border-dark-border text-slate-900 dark:text-white font-bold text-xs sm:text-[13px] shadow-2xs hover:border-slate-400 hover:bg-slate-50 dark:hover:bg-dark-hover transition-all inline-flex items-center whitespace-nowrap cursor-default select-none";
+      const cardClass = "p-2 sm:p-2.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs hover:shadow-xs transition-shadow space-y-1.5";
+      const cardHeaderClass = "flex items-center justify-between font-mono text-[10px] uppercase tracking-wider text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-dark-border pb-1 font-bold";
+
+      return (
+        <div className="space-y-2 font-sans">
+          {/* SECTION HEADER */}
+          <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-dark-border pb-1">
+            <span className="font-bold text-slate-800 dark:text-slate-200">PRIMARY PROFICIENCIES</span>
+            <span className="text-slate-400 dark:text-slate-500 font-semibold font-mono text-[10px]">3-COLUMN GRID</span>
+          </div>
+
+          {/* 3-COLUMN GRID SYSTEM */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {/* CARD 1: Programming Languages & Databases (Col 1 of 3) */}
+            <div className={cardClass}>
+              <div className={cardHeaderClass}>
+                <span className="flex items-center gap-1 truncate">
+                  <span>💻</span> PROGRAMMING &amp; DBS
+                </span>
+                <span className="text-[9px] text-slate-500 dark:text-slate-400 font-mono font-semibold">4</span>
+              </div>
+              <div className="flex flex-wrap gap-2 items-center pt-0.5">
+                {['Python', 'SQL', 'R', 'MySQL'].map((skill) => (
+                  <span key={skill} className={primaryPillClass} title={skill}>
+                    {highlightText(skill)}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CARD 2: Data Analysis & Visualization (Col 2 of 3) */}
+            <div className={cardClass}>
+              <div className={cardHeaderClass}>
+                <span className="flex items-center gap-1 truncate">
+                  <span>📊</span> DATA ANALYSIS &amp; VIZ
+                </span>
+                <span className="text-[9px] text-slate-500 dark:text-slate-400 font-mono font-semibold">5</span>
+              </div>
+              <div className="flex flex-wrap gap-2 items-center pt-0.5">
+                {['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Feature Engineering'].map((skill) => (
+                  <span key={skill} className={primaryPillClass} title={skill}>
+                    {highlightText(skill)}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CARD 4: Developer Tools (Col 3 of 3) */}
+            <div className={cardClass}>
+              <div className={cardHeaderClass}>
+                <span className="flex items-center gap-1 truncate">
+                  <span>🛠</span> DEVELOPER TOOLS
+                </span>
+                <span className="text-[9px] text-slate-500 dark:text-slate-400 font-mono font-semibold">4</span>
+              </div>
+              <div className="flex flex-wrap gap-2 items-center pt-0.5">
+                {['Jupyter Notebook', 'Git', 'GitHub', 'VS Code'].map((skill) => (
+                  <span key={skill} className={primaryPillClass} title={skill}>
+                    {highlightText(skill)}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CARD 3: Machine Learning & Computer Vision (Spanning all 3 columns) */}
+            <div className={`${cardClass} col-span-1 sm:col-span-3`}>
+              <div className={cardHeaderClass}>
+                <span className="flex items-center gap-1 truncate">
+                  <span>🤖</span> MACHINE LEARNING &amp; COMPUTER VISION
+                </span>
+                <span className="text-[9px] text-slate-500 dark:text-slate-400 font-mono font-semibold">7</span>
+              </div>
+              <div className="flex flex-wrap gap-2 items-center pt-0.5">
+                {['Scikit-learn', 'Model Evaluation', 'Hyperparameter Tuning', 'Computer Vision', 'YOLO', 'OCR', 'Hadoop'].map((skill) => (
+                  <span key={skill} className={primaryPillClass} title={skill}>
+                    {highlightText(skill)}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // --- ROW 1 SKILLS: SECONDARY SKILLS (COMPACT 2-COLUMN GHOST DESIGN) ---
+    function SecondarySkillsSection({ highlightText }) {
+      const secondaryPillClass = "py-1.5 px-3.5 rounded-full bg-white dark:bg-dark-surface border border-slate-200 dark:border-dark-border text-slate-900 dark:text-white font-semibold text-xs sm:text-[12.5px] shadow-2xs hover:border-slate-400 hover:bg-slate-50 dark:hover:bg-dark-hover transition-all inline-flex items-center whitespace-nowrap cursor-default select-none";
+      const cardClass = "p-2 sm:p-2.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs hover:shadow-xs transition-shadow space-y-1.5";
+      const cardHeaderClass = "flex items-center justify-between font-mono text-[10px] uppercase tracking-wider text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-dark-border pb-1 font-bold";
+
+      return (
+        <div className="space-y-2 font-sans">
+          {/* SECTION HEADER */}
+          <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-dark-border pb-1">
+            <span className="font-bold text-slate-700 dark:text-slate-300">SECONDARY SKILLS</span>
+            <span className="text-slate-400 dark:text-slate-500 font-semibold font-mono text-[10px]">2-COLUMN GRID</span>
+          </div>
+
+          {/* 2-COLUMN GRID SYSTEM */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {/* CARD 5: Web Development & Languages (Col 1 of 2) */}
+            <div className={cardClass}>
+              <div className={cardHeaderClass}>
+                <span className="flex items-center gap-1 truncate">
+                  <span>🌐</span> WEB DEVELOPMENT &amp; LANGUAGES
+                </span>
+                <span className="text-[9px] text-slate-500 dark:text-slate-400 font-mono font-semibold">4</span>
+              </div>
+              <div className="flex flex-wrap gap-2 items-center pt-0.5">
+                {['HTML', 'CSS', 'C', 'Anaconda'].map((skill) => (
+                  <span key={skill} className={secondaryPillClass} title={skill}>
+                    {highlightText(skill)}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CARD 6: AI Workflow & Productivity (Col 2 of 2) */}
+            <div className={cardClass}>
+              <div className={cardHeaderClass}>
+                <span className="flex items-center gap-1 truncate">
+                  <span>⚡</span> AI WORKFLOW &amp; PRODUCTIVITY
+                </span>
+                <span className="text-[9px] text-slate-500 dark:text-slate-400 font-mono font-semibold">4</span>
+              </div>
+              <div className="flex flex-wrap gap-2 items-center pt-0.5">
+                {['Prompt Engineering', 'AI-Assisted Development', 'Vibe Coding', 'n8n'].map((skill) => (
+                  <span key={skill} className={secondaryPillClass} title={skill}>
+                    {highlightText(skill)}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // --- ROW 2 SKILLS: ELEGANT CARD FOR PROFESSIONAL SKILLS & LANGUAGES ---
+    function ProfessionalSkillsAndLanguages({ profSkills, languages, highlightText }) {
+      const profPillClass = "py-1.5 px-3.5 rounded-full bg-white dark:bg-dark-surface border border-slate-200 dark:border-dark-border text-slate-900 dark:text-white font-semibold text-xs sm:text-[12.5px] shadow-2xs hover:border-slate-400 hover:bg-slate-50 dark:hover:bg-dark-hover transition-all inline-flex items-center whitespace-nowrap cursor-default select-none";
+
+      return (
+        <div className="p-2.5 sm:p-3 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-2.5 font-sans">
+          {/* PROFESSIONAL SKILLS SECTION */}
+          <div className="space-y-1.5">
+            <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-wider text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-dark-border pb-1 font-bold">
+              <span>🤝 PROFESSIONAL SKILLS</span>
+            </div>
+            <div className="flex flex-wrap gap-2 pt-0.5">
+              {profSkills.map((ps) => (
+                <span key={ps} className={profPillClass}>
+                  {highlightText(ps)}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* LANGUAGES SUBSECTION WITH SUBTLE DIVIDER */}
+          <div className="pt-2 border-t border-slate-100 dark:border-dark-border space-y-1">
+            <div className="text-[10px] font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+              <span>🌍</span> LANGUAGES
+            </div>
+            <div className="flex items-center gap-2">
+              {languages.map((lang) => (
+                <span
+                  key={lang}
+                  className="px-3 py-1 rounded-full bg-white dark:bg-dark-surface text-slate-900 dark:text-white border border-slate-200 dark:border-dark-border text-xs font-mono font-medium shadow-2xs"
+                >
+                  {highlightText(lang)}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // --- ROW 2 SKILLS: FIXED-HEIGHT CERTIFICATES SECTION WITH HIGHLIGHTING ---
+    function CertificatesListSection({ certificates, onSelectCert, highlightText, isHighlighted }) {
+      return (
+        <div
+          id="certificates-section"
+          className={`p-4 sm:p-5 rounded-2xl bg-white dark:bg-dark-card border shadow-2xs h-[395px] max-h-[395px] flex flex-col justify-between font-sans transition-all duration-300 ${
+            isHighlighted
+              ? 'border-purple-500 dark:border-purple-400 ring-4 ring-purple-500/40 shadow-xl shadow-purple-500/20 scale-[1.01]'
+              : 'border-slate-200/90 dark:border-dark-border'
+          }`}
+        >
+          {/* FIXED HEADER */}
+          <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-dark-border pb-2 shrink-0">
+            <span className="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+              <span>🏅</span> CERTIFICATES
+            </span>
+            <span className="text-purple-600 dark:text-purple-400 font-bold">{certificates.length} Verified Credentials</span>
+          </div>
+
+          {/* FIXED-HEIGHT SCROLLABLE LIST CONTAINER */}
+          <div className="flex-1 h-[325px] max-h-[325px] overflow-y-auto pr-1.5 space-y-2.5 custom-cert-scroll pt-2">
+            {certificates.map((cert) => (
+              <div
+                key={cert.id}
+                onClick={() => onSelectCert(cert)}
+                className="p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-200/90 dark:border-dark-border hover:border-purple-500 dark:hover:border-purple-400 hover:bg-white dark:hover:bg-dark-hover hover:shadow-md transition-all duration-200 cursor-pointer flex items-center justify-between group min-h-[62px]"
+              >
+                <div className="flex items-center gap-3 min-w-0 pr-2">
+                  <span className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-2xs font-mono shrink-0 shadow-2xs border border-white/20 ${cert.badgeColor}`}>
+                    {cert.issuerIcon}
+                  </span>
+                  <div className="space-y-0.5 min-w-0">
+                    <h4 className="font-bold text-xs text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-snug truncate">
+                      {highlightText(cert.title)}
+                    </h4>
+                    <div className="flex items-center gap-2 font-mono text-[10px] text-slate-500 dark:text-slate-400">
+                      <span className="font-semibold text-slate-700 dark:text-slate-300">{cert.issuer}</span>
+                      <span>•</span>
+                      <span className="px-1.5 py-0.2 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 font-bold border border-emerald-200 dark:border-emerald-500/30">
+                        {cert.status}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <span className="text-base font-mono text-purple-600 dark:text-purple-400 font-bold group-hover:translate-x-1 transition-transform shrink-0">
+                  →
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // --- EXPANDED CONTACT CARD SIDEBAR COMPONENT ---
+    function ExpandedContactCard({ contact, onOpenResume, highlightText }) {
+      const [copiedField, setCopiedField] = useState(null);
+
+      const handleCopy = (text, field) => {
+        navigator.clipboard.writeText(text);
+        setCopiedField(field);
+        setTimeout(() => setCopiedField(null), 1500);
+      };
+
+      return (
+        <div className="p-6 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-md space-y-5 font-sans h-full flex flex-col justify-between">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-dark-border pb-2.5">
+              <span className="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                <span>📬</span> GET IN TOUCH
+              </span>
+              <span className="text-emerald-600 dark:text-emerald-400 font-bold">Available for Hire</span>
+            </div>
+
+            {/* CONTACT DETAILS: PHONE, EMAIL, LOCATION */}
+            <div className="space-y-3 font-mono text-xs">
+              {/* EMAIL */}
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-200/80 dark:border-dark-border hover:border-emerald-400 transition-colors">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="w-8.5 h-8.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm shrink-0 border border-emerald-200 dark:border-emerald-500/30">
+                    ✉️
+                  </span>
+                  <div className="min-w-0">
+                    <div className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-medium">Email</div>
+                    <a href={`mailto:${contact.email}`} className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline truncate block">
+                      {highlightText(contact.email)}
+                    </a>
+                  </div>
+                </div>
+                <button
+                  onClick={() => handleCopy(contact.email, 'email')}
+                  className="px-2.5 py-1 rounded-lg bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-600 dark:text-slate-400 hover:text-emerald-600 text-2xs font-semibold shrink-0 cursor-pointer transition-colors"
+                  title="Copy Email"
+                >
+                  {copiedField === 'email' ? '✓ Copied' : 'Copy'}
+                </button>
+              </div>
+
+              {/* PHONE */}
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-200/80 dark:border-dark-border hover:border-blue-400 transition-colors">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="w-8.5 h-8.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm shrink-0 border border-blue-200 dark:border-blue-500/30">
+                    📞
+                  </span>
+                  <div className="min-w-0">
+                    <div className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-medium">Phone</div>
+                    <div className="font-bold text-slate-800 dark:text-slate-200">
+                      {highlightText(contact.phone)}
+                    </div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => handleCopy(contact.phone, 'phone')}
+                  className="px-2.5 py-1 rounded-lg bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-600 dark:text-slate-400 hover:text-blue-600 text-2xs font-semibold shrink-0 cursor-pointer transition-colors"
+                  title="Copy Phone"
+                >
+                  {copiedField === 'phone' ? '✓ Copied' : 'Copy'}
+                </button>
+              </div>
+
+              {/* LOCATION */}
+              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-200/80 dark:border-dark-border">
+                <span className="w-8.5 h-8.5 rounded-lg bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-sm shrink-0 border border-purple-200 dark:border-purple-500/30">
+                  📍
+                </span>
+                <div className="min-w-0">
+                  <div className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-medium">Location</div>
+                  <div className="font-bold text-slate-800 dark:text-slate-200">
+                    {highlightText(contact.location)}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* SUBTLE DIVIDER & THREE ACTION BUTTONS */}
+          <div className="pt-4 border-t border-slate-100 dark:border-dark-border space-y-3">
+            <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+              PRIMARY ACTION CHANNELS
+            </div>
+
+            <div className="grid grid-cols-1 gap-2.5 font-mono text-xs">
+              {/* GITHUB BUTTON */}
+              <a
+                href={contact.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="p-3.5 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-200/90 dark:border-dark-border hover:border-slate-400 dark:hover:border-slate-400 hover:bg-white dark:hover:bg-dark-hover text-slate-900 dark:text-white font-bold transition-all shadow-2xs hover:shadow-md hover:scale-[1.02] active:scale-95 flex items-center justify-between group cursor-pointer"
+              >
+                <div className="flex items-center gap-3">
+                  <svg className="w-4 h-4 fill-current text-slate-800 dark:text-slate-100 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span>GitHub Profile</span>
+                </div>
+                <span className="text-slate-400 group-hover:translate-x-1 transition-transform">↗</span>
+              </a>
+
+              {/* LINKEDIN BUTTON */}
+              <a
+                href={contact.linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="p-3.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-500/30 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/50 text-blue-900 dark:text-blue-300 font-bold transition-all shadow-2xs hover:shadow-md hover:scale-[1.02] active:scale-95 flex items-center justify-between group cursor-pointer"
+              >
+                <div className="flex items-center gap-3">
+                  <svg className="w-4 h-4 fill-current text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  <span>LinkedIn Network</span>
+                </div>
+                <span className="text-blue-500 group-hover:translate-x-1 transition-transform">↗</span>
+              </a>
+
+              {/* RESUME BUTTON */}
+              <button
+                onClick={onOpenResume}
+                className="p-3.5 rounded-xl bg-emerald-500/10 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/40 hover:border-emerald-500 hover:bg-emerald-600 text-emerald-800 dark:text-emerald-300 hover:text-white font-bold transition-all shadow-2xs hover:shadow-md hover:scale-[1.02] active:scale-95 flex items-center justify-between group cursor-pointer"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-base leading-none group-hover:scale-110 transition-transform">📄</span>
+                  <span>View Interactive Resume</span>
+                </div>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // --- DEDICATED RESUME PAGE COMPONENT ---
+    function ScreenResume({ onBack }) {
+      const handlePrint = () => {
+        const iframe = document.getElementById('resume-iframe');
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+        } else {
+          window.print();
+        }
+      };
+
+      const handleFullscreen = () => {
+        window.open('./tarini_agarwal_resume.pdf', '_blank');
+      };
+
+      return (
+        <div className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 flex flex-col font-sans select-none">
+          {/* HEADER BAR */}
+          <header className="sticky top-0 z-50 bg-white/95 dark:bg-dark-header/95 backdrop-blur-md border-b border-slate-200 dark:border-dark-border px-4 py-3 shadow-2xs flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={onBack}
+                className="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface border border-slate-200 dark:border-dark-border hover:bg-emerald-50 dark:hover:bg-emerald-950/70 text-slate-800 dark:text-slate-200 font-mono text-xs font-semibold cursor-pointer transition-all flex items-center gap-1.5 shadow-2xs hover:scale-[1.02] active:scale-95"
+              >
+                <span>←</span>
+                <span>Back to Portfolio</span>
+              </button>
+              <div className="text-xs font-mono text-slate-500 dark:text-slate-400 hidden sm:block border-l border-slate-200 dark:border-dark-border pl-3">
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">pd</span> / resume / tarini_agarwal_resume.pdf
+              </div>
+            </div>
+
+            {/* TOP RIGHT ACTION CONTROLS */}
+            <div className="flex items-center gap-2 font-mono text-xs">
+              <button
+                onClick={handlePrint}
+                className="px-3 py-1.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border hover:border-slate-400 text-slate-700 dark:text-slate-300 font-semibold cursor-pointer transition-all shadow-2xs hover:scale-[1.02] active:scale-95 flex items-center gap-1.5"
+                title="Print Resume"
+              >
+                <span>🖨️</span>
+                <span className="hidden sm:inline">Print</span>
+              </button>
+
+              <button
+                onClick={handleFullscreen}
+                className="px-3 py-1.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border hover:border-slate-400 text-slate-700 dark:text-slate-300 font-semibold cursor-pointer transition-all shadow-2xs hover:scale-[1.02] active:scale-95 flex items-center gap-1.5"
+                title="Open Fullscreen"
+              >
+                <span>⛶</span>
+                <span className="hidden sm:inline">Fullscreen</span>
+              </button>
+
+              <a
+                href="./tarini_agarwal_resume.pdf"
+                download="tarini_agarwal_resume.pdf"
+                className="px-4 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold cursor-pointer transition-all shadow-md hover:scale-[1.02] active:scale-95 flex items-center gap-1.5"
+              >
+                <span>Download Resume ⤓</span>
+              </a>
+            </div>
+          </header>
+
+          {/* MAIN CENTER PDF VIEWER WORKSPACE */}
+          <main className="flex-1 max-w-5xl mx-auto w-full p-4 sm:p-6 lg:p-8 space-y-4">
+            <div className="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-dark-border pb-3 font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                <span className="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <span>📄</span> RESUME PREVIEW VIEWER
+                </span>
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">PDF Format • Tarini Agarwal</span>
+              </div>
+
+              <div className="w-full rounded-2xl overflow-hidden border border-slate-200 dark:border-dark-border shadow-inner bg-slate-100 dark:bg-slate-950 min-h-[820px] flex flex-col items-center justify-center relative">
+                <iframe
+                  id="resume-iframe"
+                  src="./tarini_agarwal_resume.pdf#view=FitH"
+                  className="w-full h-[850px] border-none rounded-2xl"
+                  title="Tarini Agarwal Resume PDF"
+                />
+              </div>
+            </div>
+          </main>
+        </div>
+      );
+    }
+
+    // --- DEDICATED CERTIFICATE DETAIL PAGE COMPONENT ---
+    function ScreenCertificateDetail({ cert, onBack, highlightText }) {
+      if (!cert) return null;
+
+      return (
+        <div className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 flex flex-col font-sans select-none">
+          {/* HEADER */}
+          <header className="sticky top-0 z-50 bg-white/95 dark:bg-dark-header/95 backdrop-blur-md border-b border-slate-200 dark:border-dark-border px-4 py-3 shadow-2xs flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={onBack}
+                className="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface border border-slate-200 dark:border-dark-border hover:bg-purple-50 dark:hover:bg-purple-950/70 text-slate-800 dark:text-slate-200 font-mono text-xs font-semibold cursor-pointer transition-all flex items-center gap-1.5 shadow-2xs"
+              >
+                <span>←</span>
+                <span>Back to Dataset</span>
+              </button>
+              <div className="text-xs font-mono text-slate-500 dark:text-slate-400 hidden sm:block border-l border-slate-200 dark:border-dark-border pl-3">
+                <span className="text-purple-600 dark:text-purple-400 font-bold">pd</span> / certificates / {cert.slug}
+              </div>
+            </div>
+
+            <div className="font-mono text-2xs text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-500/30 px-3 py-1 rounded-full">
+              In [cert]: notebook_verification_cell
+            </div>
+          </header>
+
+          {/* MAIN CERTIFICATE DETAILS WORKSPACE */}
+          <main className="flex-1 max-w-4xl mx-auto w-full p-4 sm:p-6 lg:p-8 space-y-6">
+            
+            {/* HERO CARD */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-dark-card border-2 border-purple-500/30 shadow-xl space-y-6 relative overflow-hidden">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-dark-border pb-6">
+                <div className="flex items-center gap-4">
+                  <span className={`w-16 h-16 rounded-2xl flex items-center justify-center font-extrabold text-base font-mono shrink-0 shadow-md border border-white/20 ${cert.badgeColor}`}>
+                    {cert.issuerIcon}
+                  </span>
+                  <div className="space-y-1">
+                    <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                      {cert.title}
+                    </h1>
+                    <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-slate-600 dark:text-slate-300">
+                      <span className="font-bold text-purple-700 dark:text-purple-300">{cert.issuer}</span>
+                      <span>•</span>
+                      <span>{cert.date}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="px-3.5 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 font-mono text-xs font-bold border border-emerald-300 dark:border-emerald-500/40 shrink-0">
+                  ✓ Verified Credential
+                </div>
+              </div>
+
+              {/* OVERVIEW & SKILLS GAINED */}
+              <div className="space-y-4">
+                <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
+                  {cert.desc}
+                </p>
+
+                <div className="space-y-2 pt-2">
+                  <div className="font-mono text-xs uppercase font-bold text-slate-500 dark:text-slate-400">
+                    Skills Gained &amp; Demonstrated:
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {cert.skills.map((sk) => (
+                      <span
+                        key={sk}
+                        className="px-3.5 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-500/30 text-xs font-mono font-bold shadow-2xs"
+                      >
+                        {sk}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* WHAT I LEARNED SECTION */}
+              <div className="pt-4 border-t border-slate-100 dark:border-dark-border space-y-3">
+                <h3 className="font-mono text-xs uppercase tracking-wider font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span>💡</span> WHAT I LEARNED &amp; BUILT
+                </h3>
+                <ul className="space-y-2 font-sans text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                  {cert.whatILearned.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5">
+                      <span className="text-emerald-600 dark:text-emerald-400 font-bold shrink-0">✓</span>
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* CREDENTIAL VERIFICATION LINK */}
+              <div className="pt-6 border-t border-slate-100 dark:border-dark-border flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+                <a
+                  href={cert.verifyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold transition-all shadow-md flex items-center gap-2 cursor-pointer"
+                >
+                  <span>Verify Credential 🔗</span>
+                </a>
+                <button
+                  onClick={onBack}
+                  className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-dark-surface border border-slate-200 dark:border-dark-border hover:bg-slate-200 dark:hover:bg-dark-hover text-slate-800 dark:text-slate-200 font-semibold cursor-pointer transition-colors"
+                >
+                  Back to Portfolio Dataset →
+                </button>
+              </div>
+            </div>
+          </main>
+        </div>
+      );
+    }
+
+    // --- REFINED EDITORIAL TYPOGRAPHY LANDSCAPE ---
+    function EditorialWordCloud() {
+      const [activeWordId, setActiveWordId] = useState(null);
+
+      const WORD_CLOUD_ITEMS = [
+        { id: 'cv', text: 'Computer Vision', size: 'text-xl sm:text-2xl font-extrabold', color: 'text-[#0F2C59] dark:text-blue-300', rotate: 'rotate-[-3deg]' },
+        { id: 'yolo', text: 'YOLO', size: 'text-base sm:text-lg font-bold', color: 'text-[#4C1D95] dark:text-purple-300', rotate: 'rotate-[5deg]' },
+        { id: 'opencv', text: 'OpenCV', size: 'text-base sm:text-lg font-bold', color: 'text-[#0D9488] dark:text-teal-300', rotate: 'rotate-[-4deg]' },
+        { id: 'obj-detect', text: 'Object Detection', size: 'text-xs font-semibold', color: 'text-[#581C87] dark:text-purple-300' },
+
+        { id: 'ai', text: 'Artificial Intelligence', size: 'text-2xl sm:text-3xl md:text-4xl font-black tracking-tight w-full my-0.5 text-center', color: 'text-[#0B132B] dark:text-slate-100' },
+
+        { id: 'ocr', text: 'OCR', size: 'text-sm sm:text-base font-bold', color: 'text-[#0F766E] dark:text-teal-300', rotate: 'rotate-[6deg]' },
+        { id: 'img-proc', text: 'Image Processing', size: 'text-xs font-bold', color: 'text-[#EA580C] dark:text-orange-400', rotate: 'rotate-[-5deg]' },
+        { id: 'innovation', text: 'Innovation', size: 'text-xs font-semibold', color: 'text-[#DB2777] dark:text-pink-400', rotate: 'rotate-[7deg]' },
+
+        { id: 'ml', text: 'Machine Learning', size: 'text-2xl sm:text-3xl md:text-4xl font-black tracking-tight my-0.5 text-center', color: 'text-[#4C1D95] dark:text-purple-300' },
+
+        { id: 'research', text: 'Research', size: 'text-xs font-semibold', color: 'text-[#4C1D95] dark:text-purple-300', rotate: 'rotate-[-6deg]' },
+        { id: 'critical-thinking', text: 'Critical Thinking', size: 'text-xs font-bold', color: 'text-[#DC2626] dark:text-red-400', rotate: 'rotate-[4deg]' },
+        { id: 'continuous-learning', text: 'Continuous Learning', size: 'text-xs font-semibold', color: 'text-[#D97706] dark:text-amber-400', rotate: 'rotate-[-5deg]' },
+
+        { id: 'ds', text: 'Data Science', size: 'text-2xl sm:text-3xl md:text-4xl font-black tracking-tight w-full my-0.5 text-center', color: 'text-[#0F766E] dark:text-teal-300' },
+
+        { id: 'pandas', text: 'Pandas', size: 'text-base sm:text-lg font-bold', color: 'text-[#1D4ED8] dark:text-blue-400', rotate: 'rotate-[-3deg]' },
+        { id: 'numpy', text: 'NumPy', size: 'text-base sm:text-lg font-bold', color: 'text-[#059669] dark:text-emerald-400', rotate: 'rotate-[5deg]' },
+        { id: 'sklearn', text: 'Scikit-learn', size: 'text-xs sm:text-sm font-bold', color: 'text-[#6B21A8] dark:text-purple-300', rotate: 'rotate-[-4deg]' },
+        { id: 'python', text: 'Python', size: 'text-xl sm:text-2xl font-black', color: 'text-[#15803D] dark:text-green-400', rotate: 'rotate-[3deg]' },
+        { id: 'analytics', text: 'Analytics', size: 'text-lg sm:text-xl font-bold', color: 'text-[#EA580C] dark:text-orange-400', rotate: 'rotate-[-5deg]' },
+        { id: 'sql', text: 'SQL', size: 'text-lg sm:text-xl font-black', color: 'text-[#1E3A8A] dark:text-blue-300', rotate: 'rotate-[6deg]' },
+
+        { id: 'viz', text: 'Data Visualization', size: 'text-xs font-semibold', color: 'text-[#0D9488] dark:text-teal-400', rotate: 'rotate-[-4deg]' },
+        { id: 'cleaning', text: 'Data Cleaning', size: 'text-xs font-bold', color: 'text-[#EA580C] dark:text-orange-400', rotate: 'rotate-[5deg]' },
+        { id: 'eval', text: 'Model Evaluation', size: 'text-xs font-semibold', color: 'text-[#1D4ED8] dark:text-blue-400' },
+        { id: 'jupyter', text: 'Jupyter', size: 'text-xs font-bold', color: 'text-[#6B21A8] dark:text-purple-300', rotate: 'rotate-[-6deg]' },
+
+        { id: 'adaptability', text: 'Adaptability', size: 'text-xs font-bold', color: 'text-[#4338CA] dark:text-indigo-300', rotate: 'rotate-[-7deg]' },
+        { id: 'git', text: 'Git', size: 'text-xs sm:text-sm font-bold', color: 'text-[#16A34A] dark:text-green-400', rotate: 'rotate-[4deg]' },
+        { id: 'github', text: 'GitHub', size: 'text-xs sm:text-sm font-extrabold', color: 'text-[#1E3A8A] dark:text-blue-300', rotate: 'rotate-[-5deg]' },
+        { id: 'problem-solving', text: 'Problem Solving', size: 'text-xs font-bold', color: 'text-[#DC2626] dark:text-red-400', rotate: 'rotate-[6deg]' },
+        { id: 'hacktoberfest', text: 'Hacktoberfest', size: 'text-xs font-semibold', color: 'text-[#0D9488] dark:text-teal-400', rotate: 'rotate-[-8deg]' },
+
+        { id: 'initiative', text: 'Initiative', size: 'text-xs font-bold', color: 'text-[#16A34A] dark:text-green-400', rotate: 'rotate-[-4deg]' },
+        { id: 'hackathons', text: 'Hackathons', size: 'text-xs font-bold', color: 'text-[#1D4ED8] dark:text-blue-400', rotate: 'rotate-[5deg]' },
+
+        { id: 'public-speaking', text: 'Public Speaking', size: 'text-2xl sm:text-3xl md:text-4xl font-black tracking-tight w-full my-0.5 text-center', color: 'text-[#EF4444] dark:text-red-400' },
+
+        { id: 'leadership', text: 'Leadership', size: 'text-xs sm:text-sm font-bold', color: 'text-[#D97706] dark:text-amber-400', rotate: 'rotate-[4deg]' },
+        { id: 'communication', text: 'Communication', size: 'text-xs sm:text-sm font-bold', color: 'text-[#0F766E] dark:text-teal-300', rotate: 'rotate-[-5deg]' },
+        { id: 'creativity', text: 'Creativity', size: 'text-xs font-bold', color: 'text-[#6B21A8] dark:text-purple-300', rotate: 'rotate-[6deg]' },
+        { id: 'teamwork', text: 'Teamwork', size: 'text-xs sm:text-sm font-bold', color: 'text-[#1D4ED8] dark:text-blue-400', rotate: 'rotate-[-4deg]' },
+        { id: 'collaboration', text: 'Collaboration', size: 'text-xs sm:text-sm font-bold', color: 'text-[#EA580C] dark:text-orange-400', rotate: 'rotate-[5deg]' },
+        { id: 'time-management', text: 'Time Management', size: 'text-xs font-semibold', color: 'text-[#3730A3] dark:text-indigo-300', rotate: 'rotate-[-6deg]' },
+        { id: 'presentation', text: 'Presentation Skills', size: 'text-xs font-bold', color: 'text-[#15803D] dark:text-green-400', rotate: 'rotate-[7deg]' }
+      ];
+
+      const WORD_RELATIONS = {
+        ai: ['ml', 'cv', 'python', 'research', 'critical-thinking', 'yolo', 'opencv'],
+        ml: ['python', 'numpy', 'pandas', 'sklearn', 'yolo', 'cv', 'cleaning', 'eval', 'ai', 'ds'],
+        ds: ['python', 'sql', 'pandas', 'numpy', 'analytics', 'viz', 'cleaning', 'eval', 'jupyter', 'ml'],
+        cv: ['opencv', 'yolo', 'obj-detect', 'ocr', 'img-proc', 'python', 'ai', 'ml'],
+        python: ['ai', 'ml', 'ds', 'cv', 'pandas', 'numpy', 'sklearn', 'opencv', 'jupyter'],
+        analytics: ['ds', 'sql', 'pandas', 'viz', 'critical-thinking', 'eval'],
+        cleaning: ['ds', 'ml', 'python', 'pandas', 'numpy'],
+        eval: ['ml', 'ds', 'python', 'sklearn', 'analytics'],
+        sql: ['ds', 'analytics', 'pandas'],
+        pandas: ['ds', 'ml', 'python', 'numpy', 'cleaning'],
+        numpy: ['ds', 'ml', 'python', 'pandas', 'img-proc'],
+        sklearn: ['ml', 'python', 'ds', 'eval'],
+        opencv: ['cv', 'python', 'img-proc', 'obj-detect'],
+        yolo: ['cv', 'ml', 'ai', 'obj-detect'],
+        'obj-detect': ['yolo', 'cv', 'opencv', 'ocr'],
+        ocr: ['cv', 'obj-detect', 'opencv'],
+        'img-proc': ['cv', 'opencv', 'numpy'],
+        jupyter: ['ds', 'python', 'pandas'],
+        git: ['github', 'ds', 'python'],
+        github: ['git', 'ds', 'python', 'hackathons'],
+        viz: ['ds', 'analytics', 'creativity', 'presentation'],
+        'public-speaking': ['leadership', 'communication', 'teamwork', 'creativity', 'presentation'],
+        leadership: ['public-speaking', 'communication', 'teamwork', 'problem-solving', 'initiative'],
+        communication: ['public-speaking', 'leadership', 'teamwork', 'creativity', 'collaboration'],
+        'problem-solving': ['hackathons', 'critical-thinking', 'leadership', 'ml', 'ds', 'adaptability'],
+        creativity: ['public-speaking', 'viz', 'hackathons', 'communication', 'innovation'],
+        teamwork: ['leadership', 'communication', 'public-speaking', 'hackathons', 'collaboration'],
+        'continuous-learning': ['research', 'ai', 'ml', 'ds', 'critical-thinking', 'hacktoberfest'],
+        research: ['ai', 'continuous-learning', 'critical-thinking', 'cv'],
+        hackathons: ['problem-solving', 'teamwork', 'creativity', 'python', 'ml', 'hacktoberfest'],
+        hacktoberfest: ['hackathons', 'git', 'github', 'python'],
+        'critical-thinking': ['problem-solving', 'research', 'analytics', 'ai'],
+        adaptability: ['problem-solving', 'initiative', 'teamwork'],
+        collaboration: ['teamwork', 'communication', 'leadership'],
+        innovation: ['ai', 'creativity', 'research'],
+        initiative: ['leadership', 'adaptability', 'problem-solving'],
+        presentation: ['public-speaking', 'communication', 'viz'],
+        'time-management': ['leadership', 'initiative', 'ds']
+      };
+
+      const isRelated = (id) => {
+        if (!activeWordId) return false;
+        const rels = WORD_RELATIONS[activeWordId] || [];
+        return rels.includes(id);
+      };
+
+      const activeItem = WORD_CLOUD_ITEMS.find(w => w.id === activeWordId);
+
+      return (
+        <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-2 font-sans relative overflow-hidden">
+          <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-dark-border pb-1.5">
+            <span className="font-bold text-slate-700 dark:text-slate-200">CORE INTERESTS</span>
+            {activeWordId && (
+              <span className="text-emerald-600 dark:text-emerald-400 font-semibold transition-opacity duration-200">
+                Focus: {activeItem?.text}
+              </span>
+            )}
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 py-1 px-1 text-center leading-tight relative select-none">
+            {WORD_CLOUD_ITEMS.map((item) => {
+              const isSelf = activeWordId === item.id;
+              const related = isRelated(item.id);
+
+              let stateClasses = item.color;
+              if (isSelf) {
+                stateClasses = `${item.color} opacity-100 scale-105 drop-shadow-md font-black`;
+              } else if (related) {
+                stateClasses = `${item.color} opacity-100 font-bold scale-[1.02]`;
+              } else if (activeWordId) {
+                stateClasses = 'text-slate-400 dark:text-slate-600 opacity-20';
+              }
+
+              const rotateClass = item.rotate || 'rotate-0';
+
+              return (
+                <span
+                  key={item.id}
+                  onMouseEnter={() => setActiveWordId(item.id)}
+                  onMouseLeave={() => setActiveWordId(null)}
+                  className={`inline-block cursor-pointer whitespace-nowrap select-none transition-all duration-200 ease-out transform-gpu origin-center ${item.size} ${stateClasses} ${rotateClass}`}
+                >
+                  {item.text}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+
+    // --- DARK MODE EXCLUSIVE: BINARY IDENTITY PARTICLE ASSEMBLY ENGINE ---
+    function DarkModeBinaryIdentityCanvas() {
+      const canvasRef = useRef(null);
+
+      useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        let mouseX = -1000;
+        let mouseY = -1000;
+
+        const handleMouseMove = (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        };
+        const handleMouseLeave = () => {
+          mouseX = -1000;
+          mouseY = -1000;
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mouseleave', handleMouseLeave);
+
+        const handleResize = () => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+          initParticles();
+        };
+        window.addEventListener('resize', handleResize);
+
+        const offCanvas = document.createElement('canvas');
+        const offCtx = offCanvas.getContext('2d');
+
+        let particles = [];
+
+        const initParticles = () => {
+          offCanvas.width = width;
+          offCanvas.height = height;
+          offCtx.clearRect(0, 0, width, height);
+
+          const centerY = height * 0.28;
+
+          offCtx.fillStyle = '#FFFFFF';
+          offCtx.font = 'bold 58px Inter, sans-serif';
+          offCtx.textAlign = 'center';
+          offCtx.fillText('Tarini Agarwal', width / 2, centerY);
+
+          offCtx.font = '600 16px "JetBrains Mono", monospace';
+          offCtx.fillText('Data Scientist • AI Engineer • Storyteller', width / 2, centerY + 50);
+
+          offCtx.font = '500 20px Inter, sans-serif';
+          offCtx.fillText('Every dataset tells a story.', width / 2, centerY + 95);
+          offCtx.font = '600 20px Inter, sans-serif';
+          offCtx.fillText('This dataset tells mine.', width / 2, centerY + 125);
+
+          const imgData = offCtx.getImageData(0, 0, width, height);
+          const data = imgData.data;
+
+          const targets = [];
+          const step = Math.max(6, Math.floor(width / 220));
+
+          for (let y = 0; y < height; y += step) {
+            for (let x = 0; x < width; x += step) {
+              const alpha = data[(y * width + x) * 4 + 3];
+              if (alpha > 128) {
+                let color = '#FFFFFF';
+                let fontSize = 14;
+                if (y < centerY + 20) {
+                  const ratio = (x - (width / 2 - 200)) / 400;
+                  if (ratio < 0.3) color = '#3882F6';
+                  else if (ratio < 0.7) color = '#06B6D4';
+                  else color = '#00FF66';
+                  fontSize = 16;
+                } else if (y < centerY + 70) {
+                  color = '#34D399';
+                  fontSize = 12;
+                } else if (y > centerY + 110) {
+                  color = '#00FF66';
+                  fontSize = 14;
+                }
+
+                targets.push({ x, y, color, fontSize });
+              }
+            }
+          }
+
+          particles = targets.map((t) => {
+            const startX = Math.random() * width;
+            const startY = Math.random() * -height;
+            return {
+              x: startX,
+              y: startY,
+              vx: (Math.random() - 0.5) * 0.8,
+              vy: Math.random() * 1.5 + 1.2,
+              tx: t.x,
+              ty: t.y,
+              targetColor: t.color,
+              char: Math.random() > 0.5 ? '1' : '0',
+              size: t.fontSize,
+              baseOpacity: Math.random() * 0.5 + 0.5,
+              glow: Math.random() > 0.95
+            };
+          });
+
+          const ambientCount = 350;
+          for (let i = 0; i < ambientCount; i++) {
+            particles.push({
+              x: Math.random() * width,
+              y: Math.random() * height,
+              vx: (Math.random() - 0.5) * 0.4,
+              vy: Math.random() * 0.8 + 0.4,
+              tx: null,
+              ty: null,
+              targetColor: '#108991',
+              char: Math.random() > 0.5 ? '1' : '0',
+              size: 13,
+              baseOpacity: Math.random() * 0.3 + 0.1,
+              glow: false
+            });
+          }
+        };
+
+        initParticles();
+
+        let animationFrameId;
+        let startTime = performance.now();
+
+        const draw = (now) => {
+          const elapsed = (now - startTime) / 1000;
+          const cycleDuration = 12.0;
+          const cycleTime = elapsed % cycleDuration;
+
+          let assemblyProgress = 0;
+          if (cycleTime >= 3.0 && cycleTime < 5.5) {
+            assemblyProgress = (cycleTime - 3.0) / 2.5;
+            assemblyProgress = Math.pow(assemblyProgress, 2);
+          } else if (cycleTime >= 5.5 && cycleTime < 9.5) {
+            assemblyProgress = 1.0;
+          } else if (cycleTime >= 9.5 && cycleTime < 11.5) {
+            assemblyProgress = 1.0 - ((cycleTime - 9.5) / 2.0);
+          } else {
+            assemblyProgress = 0;
+          }
+
+          ctx.fillStyle = 'rgba(8, 12, 20, 0.35)';
+          ctx.fillRect(0, 0, width, height);
+
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+
+            p.y += p.vy;
+            p.x += p.vx;
+
+            if (p.y > height + 20) {
+              p.y = Math.random() * -50;
+              p.x = Math.random() * width;
+            }
+
+            let renderX = p.x;
+            let renderY = p.y;
+
+            if (p.tx !== null && assemblyProgress > 0) {
+              const targetX = p.tx;
+              const targetY = p.ty;
+
+              renderX = p.x * (1 - assemblyProgress) + targetX * assemblyProgress;
+              renderY = p.y * (1 - assemblyProgress) + targetY * assemblyProgress;
+            }
+
+            const dx = renderX - mouseX;
+            const dy = renderY - mouseY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const maxDist = 140;
+
+            if (dist < maxDist && dist > 0) {
+              const force = (1 - dist / maxDist) * 35;
+              renderX += (dx / dist) * force;
+              renderY += (dy / dist) * force;
+            }
+
+            if (Math.random() > 0.995) {
+              p.char = p.char === '1' ? '0' : '1';
+            }
+
+            ctx.font = `bold ${p.size}px "JetBrains Mono", monospace`;
+
+            if (assemblyProgress > 0.5 && p.tx !== null) {
+              ctx.fillStyle = p.targetColor;
+              if (p.glow) {
+                ctx.shadowColor = p.targetColor;
+                ctx.shadowBlur = 6;
+              } else {
+                ctx.shadowBlur = 0;
+              }
+            } else {
+              ctx.fillStyle = p.glow ? '#00FF66' : `rgba(52, 211, 153, ${p.baseOpacity})`;
+              ctx.shadowColor = p.glow ? '#00FF66' : 'transparent';
+              ctx.shadowBlur = p.glow ? 4 : 0;
+            }
+
+            ctx.fillText(p.char, renderX, renderY);
+          }
+
+          animationFrameId = requestAnimationFrame(draw);
+        };
+
+        animationFrameId = requestAnimationFrame(draw);
+
+        return () => {
+          window.removeEventListener('mousemove', handleMouseMove);
+          window.removeEventListener('mouseleave', handleMouseLeave);
+          window.removeEventListener('resize', handleResize);
+          cancelAnimationFrame(animationFrameId);
+        };
+      }, []);
+
+      return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0 opacity-95" />;
+    }
+
+    // --- LIGHT MODE LANDING CANVAS ---
+    function InteractiveSlowRainCanvas({ isDark }) {
+      const canvasRef = useRef(null);
+
+      useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        let mouseX = -1000;
+        let mouseY = -1000;
+
+        const handleMouseMove = (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        };
+
+        const handleMouseLeave = () => {
+          mouseX = -1000;
+          mouseY = -1000;
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mouseleave', handleMouseLeave);
+
+        const fontSize = 15;
+        const cols = Math.ceil(width / (fontSize * 1.1));
+        const rows = Math.ceil(height / (fontSize * 1.2)) + 4;
+
+        const colOffsets = Array.from({ length: cols }, () => Math.random() * 100);
+
+        const handleResize = () => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        };
+        window.addEventListener('resize', handleResize);
+
+        let animationFrameId;
+
+        const draw = () => {
+          ctx.fillStyle = isDark ? 'rgba(8, 12, 20, 0.28)' : 'rgba(248, 250, 252, 0.28)';
+          ctx.fillRect(0, 0, width, height);
+
+          ctx.font = `bold ${fontSize}px "JetBrains Mono", monospace`;
+
+          for (let c = 0; c < cols; c++) {
+            colOffsets[c] += 0.12;
+            const offset = colOffsets[c];
+
+            for (let r = -2; r < rows; r++) {
+              const origY = ((r + offset) * (fontSize * 1.2)) % (height + fontSize * 3) - fontSize;
+              const origX = c * (fontSize * 1.1);
+
+              const dx = origX - mouseX;
+              const dy = origY - mouseY;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              const maxDist = 160;
+
+              let renderX = origX;
+              let renderY = origY;
+
+              if (dist < maxDist && dist > 0) {
+                const force = ((maxDist - dist) / maxDist) * 40;
+                renderX += (dx / dist) * force;
+                renderY += (dy / dist) * force;
+              }
+
+              const char = ((c * 13 + r * 29 + Math.floor(offset * 0.5)) % 2 === 0) ? '1' : '0';
+              let opacity = 0.15 + (Math.sin(c * 0.4 + r * 0.2 + offset * 0.1) * 0.15 + 0.15);
+
+              if (dist < maxDist) {
+                opacity = Math.min(1, opacity + 0.35);
+              }
+
+              ctx.fillStyle = `rgba(16, 137, 145, ${opacity + 0.15})`;
+              ctx.shadowBlur = 0;
+
+              ctx.fillText(char, renderX, renderY);
+            }
+          }
+
+          animationFrameId = requestAnimationFrame(draw);
+        };
+
+        draw();
+
+        return () => {
+          window.removeEventListener('mousemove', handleMouseMove);
+          window.removeEventListener('mouseleave', handleMouseLeave);
+          window.removeEventListener('resize', handleResize);
+          cancelAnimationFrame(animationFrameId);
+        };
+      }, [isDark]);
+
+      return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0 opacity-90" />;
+    }
+
+    // --- SCREEN 1: LANDING PAGE ---
+    function Screen1({ onRun, isDark, onToggleTheme }) {
+      useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (e.key === 'Enter' && e.shiftKey) {
+            e.preventDefault();
+            onRun();
+          }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+      }, [onRun]);
+
+      return (
+        <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-slate-900 dark:text-slate-100 flex flex-col items-center justify-center p-6 select-none font-sans relative overflow-hidden">
+          {isDark ? <DarkModeBinaryIdentityCanvas /> : <InteractiveSlowRainCanvas isDark={false} />}
+
+          <div className="absolute top-6 right-6 z-20">
+            <button
+              onClick={onToggleTheme}
+              className="px-3.5 py-2 rounded-xl bg-white/90 dark:bg-dark-surface/90 border border-slate-200 dark:border-dark-border text-slate-700 dark:text-slate-300 hover:border-slate-400 cursor-pointer shadow-lg backdrop-blur-md font-mono text-xs flex items-center gap-1.5"
+              title="Toggle Light/Dark Theme"
+            >
+              <span>{isDark ? '☀️' : '🌙'}</span>
+              <span>{isDark ? 'Light' : 'Dark'}</span>
+            </button>
+          </div>
+
+          <div className="w-full max-w-2xl space-y-8 z-10 text-center">
+            {isDark ? (
+              <div className="h-44 flex flex-col justify-center items-center pointer-events-none" />
+            ) : (
+              <div className="space-y-3 bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-slate-200 shadow-xl">
+                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight font-sans">
+                  <span className="bg-gradient-to-r from-blue-600 via-teal-600 to-emerald-600 bg-clip-text text-transparent">
+                    Tarini Agarwal
+                  </span>
+                </h1>
+
+                <p className="text-sm md:text-base text-slate-700 font-mono font-semibold tracking-wide">
+                  Data Scientist • AI Engineer • Storyteller
+                </p>
+
+                <div className="text-base md:text-lg text-slate-600 font-normal leading-relaxed pt-2">
+                  <p className="text-slate-900 font-medium">Every dataset tells a story.</p>
+                  <p className="text-emerald-600 font-semibold">This dataset tells mine.</p>
+                </div>
+              </div>
+            )}
+
+            <div className="bg-white/95 dark:bg-dark-card/95 border border-slate-200 dark:border-dark-border rounded-xl overflow-hidden shadow-2xl text-left font-mono text-xs md:text-sm backdrop-blur-md">
+              <div className="bg-slate-100 dark:bg-dark-header border-b border-slate-200 dark:border-dark-border px-5 py-3 flex items-center justify-between text-2xs text-slate-500 dark:text-slate-400">
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block" />
+                  <span className="font-semibold text-emerald-600 dark:text-emerald-400">In [1]:</span>
+                </div>
+                <span className="font-sans text-slate-600 dark:text-slate-400">Python 3.11 Kernel • portfolio.csv</span>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-dark-bg/90 space-y-3 leading-relaxed">
+                <div className="flex items-center gap-3">
+                  <span className="text-emerald-600 dark:text-emerald-400 font-bold select-none">&gt;&gt;&gt;</span>
+                  <span className="text-purple-700 dark:text-purple-400 font-semibold">import</span>
+                  <span className="text-slate-900 dark:text-white font-semibold">pandas</span>
+                  <span className="text-purple-700 dark:text-purple-400 font-semibold">as</span>
+                  <span className="text-teal-700 dark:text-cyan-400 font-semibold">pd</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-emerald-600 dark:text-emerald-400 font-bold select-none">&gt;&gt;&gt;</span>
+                  <span className="text-slate-900 dark:text-white font-semibold">portfolio</span>
+                  <span className="text-slate-400">=</span>
+                  <span className="text-teal-700 dark:text-cyan-400 font-semibold">pd</span>
+                  <span className="text-slate-400">.</span>
+                  <span className="text-amber-700 dark:text-amber-300 font-semibold">read_csv</span>
+                  <span className="text-slate-400">(</span>
+                  <span className="text-emerald-700 dark:text-emerald-400 font-semibold">&quot;portfolio.csv&quot;</span>
+                  <span className="text-slate-400">)</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2 flex flex-col items-center gap-3">
+              <button
+                onClick={onRun}
+                className="group relative inline-flex items-center justify-center gap-3 px-10 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-base font-semibold transition-all duration-200 shadow-xl shadow-emerald-600/30 active:scale-95 cursor-pointer z-20"
+              >
+                <span>▶ Run</span>
+              </button>
+              <span className="text-xs text-slate-500 dark:text-slate-400 font-mono bg-white/90 dark:bg-dark-bg/80 px-3.5 py-1 rounded-full border border-slate-200 dark:border-slate-700/40 z-20">(Shift + Enter)</span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // --- SCREEN 2: PIP TERMINAL LOADER ---
+    function Screen2({ onComplete }) {
+      const [lines, setLines] = useState([]);
+      const [progress, setProgress] = useState(0);
+
+      const PACKAGES = [
+        { text: 'Collecting pandas...', color: 'text-emerald-400 font-semibold' },
+        { text: 'Collecting numpy...', color: 'text-blue-400 font-semibold' },
+        { text: 'Collecting matplotlib...', color: 'text-orange-400 font-semibold' },
+        { text: 'Collecting scikit-learn...', color: 'text-purple-400 font-semibold' },
+        { text: 'Collecting memories...', color: 'text-cyan-400 font-semibold' },
+        { text: 'Collecting projects...', textSub: 'MindLink, SURAKSHA+, Traffic Control', color: 'text-teal-300' },
+        { text: 'Collecting experience...', textSub: 'NICSI ML Intern', color: 'text-emerald-400' },
+        { text: 'Collecting certificates...', textSub: 'IBM & Google Credentials', color: 'text-amber-400 font-semibold' },
+        { text: 'Successfully loaded portfolio dataset.', color: 'text-emerald-400 font-bold pt-2 border-t border-slate-800' }
+      ];
+
+      useEffect(() => {
+        let i = 0;
+        const interval = setInterval(() => {
+          if (i < PACKAGES.length) {
+            setLines((prev) => [...prev, PACKAGES[i]]);
+            setProgress(Math.round(((i + 1) / PACKAGES.length) * 100));
+            i++;
+          } else {
+            clearInterval(interval);
+            setTimeout(onComplete, 300);
+          }
+        }, 120);
+        return () => clearInterval(interval);
+      }, [onComplete]);
+
+      return (
+        <div className="min-h-screen bg-dark-bg text-white flex flex-col items-center justify-center p-6 font-mono text-xs select-none">
+          <div className="w-full max-w-xl bg-dark-card border border-dark-border rounded-xl overflow-hidden shadow-2xl">
+            <div className="bg-dark-header border-b border-dark-border px-5 py-3 flex items-center justify-between text-2xs text-slate-400">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-red-500 inline-block" />
+                <span className="w-3 h-3 rounded-full bg-yellow-500 inline-block" />
+                <span className="w-3 h-3 rounded-full bg-green-500 inline-block" />
+              </div>
+              <span className="font-semibold text-slate-300">python_env: pip install --portfolio</span>
+              <span>{progress}%</span>
+            </div>
+
+            <div className="p-6 space-y-2.5 min-h-[300px] bg-slate-950 text-slate-200 font-mono text-xs leading-relaxed">
+              {lines.map((l, idx) => (
+                <div key={idx} className={`flex items-center justify-between ${l.color}`}>
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-slate-600 text-2xs">$</span>
+                    <span>{l.text}</span>
+                  </div>
+                  {l.textSub && <span className="text-2xs text-slate-500 font-normal">{l.textSub}</span>}
+                </div>
+              ))}
+              {lines.length < PACKAGES.length && (
+                <div className="w-2 h-4 bg-emerald-400 animate-pulse inline-block mt-1" />
+              )}
+            </div>
+
+            <div className="w-full bg-slate-900 h-1.5 overflow-hidden">
+              <div className="bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 h-full transition-all duration-150" style={{ width: `${progress}%` }} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // --- PROJECT DETAIL MODAL ---
+    function ProjectModal({ project, onClose }) {
+      if (!project) return null;
+      return (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4" onClick={onClose}>
+          <div className="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-2xl max-w-2xl w-full p-6 space-y-6 shadow-2xl relative text-slate-900 dark:text-slate-100" onClick={e => e.stopPropagation()}>
+            <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:hover:text-white text-lg font-mono">✕</button>
+
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/30 flex items-center justify-center text-3xl">
+                {project.icon}
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-2xl font-bold font-sans">{project.name}</h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">{project.subtitle}</p>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {project.tags.map(t => (
+                    <span key={t} className="px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/30 text-cyan-700 dark:text-cyan-400 font-mono text-2xs">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-semibold flex items-center gap-2">
+              <span>{project.award}</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+              <div className="md:col-span-2 space-y-4 font-sans text-xs text-slate-700 dark:text-slate-300">
+                <p className="leading-relaxed text-sm text-slate-800 dark:text-slate-200">{project.fullDesc}</p>
+                <div className="space-y-2">
+                  <div className="font-semibold font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400">Key Features</div>
+                  <ul className="space-y-2">
+                    {project.keyFeatures.map((feat, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span>
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="space-y-2 bg-slate-50 dark:bg-dark-bg p-4 rounded-xl border border-slate-200 dark:border-dark-border font-mono text-xs">
+                <div className="text-2xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Tech Stack</div>
+                <div className="space-y-1 text-slate-800 dark:text-slate-200">
+                  {project.techStack.map(ts => (
+                    <div key={ts} className="flex items-center gap-2">
+                      <span className="text-teal-600 dark:text-cyan-400">›</span>
+                      <span>{ts}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-200 dark:border-dark-border font-mono text-xs">
+              <a href={project.github} target="_blank" rel="noreferrer" className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border hover:border-slate-400 text-slate-800 dark:text-white font-medium flex items-center gap-2">
+                <span>🐈 GitHub 🔗</span>
+              </a>
+              <button onClick={onClose} className="px-6 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold cursor-pointer">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // --- SCREEN 3: PANDAS DATAFRAME DATASET WORKSPACE ---
+    function Screen3({ isDark, onToggleTheme, onSelectCert, onOpenResume }) {
+      const [searchTerm, setSearchTerm] = useState('');
+      const [activeCol, setActiveCol] = useState('about');
+      const [renderStage, setRenderStage] = useState('prompt');
+      const [matchCount, setMatchCount] = useState(0);
+      const [selectedProject, setSelectedProject] = useState(null);
+      const [isCertHighlighted, setIsCertHighlighted] = useState(false);
+
+      const containerRef = useRef(null);
+
+      useEffect(() => {
+        const t1 = setTimeout(() => setRenderStage('headers'), 200);
+        const t2 = setTimeout(() => setRenderStage('populated'), 450);
+        return () => { clearTimeout(t1); clearTimeout(t2); };
+      }, []);
+
+      useEffect(() => {
+        const el = containerRef.current;
+        if (!el || renderStage !== 'populated') return;
+
+        const cols = ['about', 'education', 'skills', 'experience', 'projects', 'contact'];
+        const handleScroll = () => {
+          const scrollLeft = el.scrollLeft;
+          const colWidth = 640;
+          const idx = Math.min(cols.length - 1, Math.max(0, Math.floor((scrollLeft + colWidth / 3) / colWidth)));
+          setActiveCol(cols[idx]);
+        };
+
+        el.addEventListener('scroll', handleScroll, { passive: true });
+        return () => el.removeEventListener('scroll', handleScroll);
+      }, [renderStage]);
+
+      useEffect(() => {
+        if (!searchTerm.trim()) { setMatchCount(0); return; }
+        const term = searchTerm.toLowerCase();
+        const text = document.body.innerText.toLowerCase();
+        const matches = (text.match(new RegExp(term, 'g')) || []).length;
+        setMatchCount(matches);
+      }, [searchTerm, renderStage]);
+
+      const jumpToCol = (id) => {
+        if (id === 'certificates') {
+          setActiveCol('certificates');
+          const targetCol = document.getElementById('col-experience');
+          if (targetCol && containerRef.current) {
+            targetCol.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+          }
+          const certEl = document.getElementById('certificates-section');
+          if (certEl) {
+            certEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setIsCertHighlighted(true);
+            setTimeout(() => setIsCertHighlighted(false), 2000);
+          }
+          return;
+        }
+
+        setActiveCol(id);
+        const target = document.getElementById(`col-${id}`);
+        if (target && containerRef.current) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        }
+      };
+
+      const highlightText = (text) => {
+        if (!searchTerm.trim() || !text) return text;
+        const parts = text.split(new RegExp(`(${searchTerm})`, 'gi'));
+        return parts.map((part, i) =>
+          part.toLowerCase() === searchTerm.toLowerCase() ? (
+            <mark key={i} className="bg-yellow-300 text-slate-900 px-1 rounded font-semibold">{part}</mark>
+          ) : part
+        );
+      };
+
+      const columns = [
+        { id: 'about', label: 'About' },
+        { id: 'education', label: 'Education' },
+        { id: 'skills', label: 'Skills' },
+        { id: 'experience', label: 'Experience' },
+        { id: 'projects', label: 'Projects' },
+        { id: 'certificates', label: 'Certificates' },
+        { id: 'contact', label: 'Contact' }
+      ];
+
+      return (
+        <div className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 flex flex-col font-sans select-none overflow-hidden">
+          {/* Modals */}
+          <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+
+          {/* HEADER */}
+          <header className="sticky top-0 z-50 bg-white/95 dark:bg-dark-header/95 backdrop-blur-md border-b border-slate-200 dark:border-dark-border px-2.5 sm:px-3.5 lg:px-4 py-2 shadow-2xs">
+            <div className="w-full flex items-center justify-between gap-1.5 lg:gap-2.5">
+              
+              {/* 1. LEFT SECTION: File path + Kernel Badge */}
+              <div className="flex items-center gap-1 shrink-0 font-mono text-[11px] xl:text-xs">
+                <div className="h-8 sm:h-9 px-2.5 sm:px-3 flex items-center gap-1.5 bg-slate-100 dark:bg-dark-surface border border-slate-200 dark:border-dark-border rounded-xl">
+                  <span className="text-emerald-600 dark:text-emerald-400 font-bold">pd</span>
+                  <span className="text-slate-400">/</span>
+                  <span className="font-semibold text-slate-800 dark:text-slate-200">tarini_portfolio.ipynb</span>
+                </div>
+                <div className="h-8 sm:h-9 px-2 sm:px-2.5 flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400 rounded-xl font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
+                  <span>Kernel: Active</span>
+                </div>
+              </div>
+
+              {/* 2. CENTER SECTION: Navigation Tabs */}
+              <nav className="flex items-center justify-center flex-1 gap-1 px-1 font-mono text-[11px] xl:text-xs">
+                {columns.map((c) => {
+                  const isActive = (activeCol === c.id);
+                  return (
+                    <button
+                      key={c.id}
+                      onClick={() => jumpToCol(c.id)}
+                      className={`h-8 sm:h-9 px-2.5 sm:px-3 flex items-center justify-center rounded-xl transition-all duration-150 whitespace-nowrap cursor-pointer ${
+                        isActive
+                          ? 'bg-white dark:bg-emerald-500/10 border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 font-bold shadow-2xs'
+                          : 'bg-slate-100 dark:bg-dark-card border border-slate-200/90 dark:border-dark-border text-slate-600 dark:text-slate-400 font-semibold hover:bg-slate-200 dark:hover:bg-dark-hover hover:text-slate-900 dark:hover:text-white'
+                      }`}
+                    >
+                      {c.label}
+                    </button>
+                  );
+                })}
+              </nav>
+
+              {/* 3. RIGHT SECTION: Action Buttons */}
+              <div className="flex items-center gap-1 shrink-0 font-mono text-2xs">
+                <button
+                  onClick={onOpenResume}
+                  className="w-[58px] sm:w-[62px] lg:w-[65px] h-8 sm:h-9 flex flex-col items-center justify-center rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold shadow-2xs cursor-pointer transition-colors"
+                  title="View Resume"
+                >
+                  <span className="text-xs font-bold leading-none">📄</span>
+                  <span className="text-[9px] mt-0.5 font-sans">Resume</span>
+                </button>
+
+                <button
+                  onClick={onToggleTheme}
+                  className="w-[58px] sm:w-[62px] lg:w-[65px] h-8 sm:h-9 flex flex-col items-center justify-center rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-dark-hover cursor-pointer transition-colors shadow-2xs"
+                  title="Toggle Light/Dark Theme"
+                >
+                  <span className="text-xs">{isDark ? '☀️' : '🌙'}</span>
+                  <span className="text-[9px] mt-0.5 font-sans">{isDark ? 'Light' : 'Dark'}</span>
+                </button>
+
+                <a
+                  href={DATASET.contact.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-[58px] sm:w-[62px] lg:w-[65px] h-8 sm:h-9 flex flex-col items-center justify-center rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-dark-hover transition-colors shadow-2xs"
+                  title="GitHub Profile"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span className="text-[9px] mt-0.5 font-sans">GitHub</span>
+                </a>
+
+                <a
+                  href={DATASET.contact.linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-[58px] sm:w-[62px] lg:w-[65px] h-8 sm:h-9 flex flex-col items-center justify-center rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-dark-hover transition-colors shadow-2xs"
+                  title="LinkedIn Profile"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current text-blue-600" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span className="text-[9px] mt-0.5 font-sans">LinkedIn</span>
+                </a>
+
+                <a
+                  href={`mailto:${DATASET.contact.email}`}
+                  className="w-[58px] sm:w-[62px] lg:w-[65px] h-8 sm:h-9 flex flex-col items-center justify-center rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-dark-hover transition-colors shadow-2xs"
+                  title="Send Email"
+                >
+                  <svg className="w-3.5 h-3.5 stroke-current fill-none stroke-[2]" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  <span className="text-[9px] mt-0.5 font-sans">Email</span>
+                </a>
+              </div>
+
+            </div>
+          </header>
+
+          {/* Search Subheader */}
+          <div className="bg-slate-100/90 dark:bg-dark-header border-b border-slate-200 dark:border-dark-border px-6 py-2.5 flex items-center justify-between font-mono text-xs">
+            <div className="flex items-center gap-3 flex-1 max-w-lg bg-white dark:bg-dark-bg border border-slate-200 dark:border-dark-border rounded-lg px-3.5 py-1.5 focus-within:border-emerald-500 shadow-2xs">
+              <span className="text-slate-400">🔍</span>
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search dataset... Ctrl + F"
+                className="bg-transparent text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none w-full text-xs"
+              />
+              {searchTerm && <button onClick={() => setSearchTerm('')} className="text-slate-400 hover:text-slate-900 dark:hover:text-white">✕</button>}
+            </div>
+            {searchTerm && (
+              <div className="text-xs text-emerald-600 dark:text-emerald-400 font-medium bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/30 px-3 py-1 rounded-lg">
+                Matches: <span className="font-bold text-slate-900 dark:text-white">{matchCount}</span>
+              </div>
+            )}
+          </div>
+
+          {/* DATAFRAME WORKSPACE */}
+          <main className="flex-1 relative flex flex-col">
+            <div className="bg-slate-100 dark:bg-dark-card border-b border-slate-200 dark:border-dark-border px-6 py-2.5 font-mono text-xs text-slate-600 dark:text-slate-400 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">Out [1]:</span>
+                <span className="text-purple-600 dark:text-purple-400 font-semibold">&gt;&gt;&gt; portfolio.head()</span>
+              </div>
+              <div className="text-slate-600 dark:text-slate-400 font-sans">
+                Shape: <span className="text-emerald-600 dark:text-emerald-400 font-mono font-medium">(3 rows, 6 columns)</span>
+              </div>
+            </div>
+
+            {renderStage === 'prompt' ? (
+              <div className="p-12 font-mono text-sm text-slate-500 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Executing portfolio.head()...</span>
+              </div>
+            ) : (
+              <div
+                ref={containerRef}
+                className="w-full overflow-x-auto overflow-y-auto font-sans text-xs bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-[calc(100vh-130px)]"
+              >
+                <table className="min-w-full border-collapse text-left border-b border-slate-200 dark:border-dark-border">
+                  {/* Table Headers */}
+                  <thead>
+                    <tr className="bg-slate-100 dark:bg-dark-header border-b border-slate-200 dark:border-dark-border sticky top-0 z-30 font-mono text-xs uppercase tracking-wider">
+                      <th className="py-3.5 px-4 border-r border-slate-200 dark:border-dark-border w-16 text-center text-emerald-600 dark:text-emerald-400 font-bold bg-slate-100 dark:bg-dark-header">INDEX</th>
+                      <th id="col-about" className="py-3.5 px-6 border-r border-slate-200 dark:border-dark-border min-w-[620px] max-w-[660px] bg-slate-100 dark:bg-dark-header">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-brand-green" />
+                          <span className="text-slate-900 dark:text-white font-bold text-sm">ABOUT</span>
+                        </div>
+                      </th>
+                      <th id="col-education" className="py-3.5 px-6 border-r border-slate-200 dark:border-dark-border min-w-[620px] max-w-[660px] bg-slate-100 dark:bg-dark-header">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+                          <span className="text-slate-900 dark:text-white font-bold text-sm">EDUCATION</span>
+                        </div>
+                      </th>
+                      <th id="col-skills" className="py-3.5 px-6 border-r border-slate-200 dark:border-dark-border min-w-[620px] max-w-[660px] bg-slate-100 dark:bg-dark-header">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-purple-500" />
+                          <span className="text-slate-900 dark:text-white font-bold text-sm">SKILLS</span>
+                        </div>
+                      </th>
+                      <th id="col-experience" className="py-3.5 px-6 border-r border-slate-200 dark:border-dark-border min-w-[620px] max-w-[660px] bg-slate-100 dark:bg-dark-header">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-orange-500" />
+                          <span className="text-slate-900 dark:text-white font-bold text-sm">EXPERIENCE</span>
+                        </div>
+                      </th>
+                      <th id="col-projects" className="py-3.5 px-6 border-r border-slate-200 dark:border-dark-border min-w-[620px] max-w-[660px] bg-slate-100 dark:bg-dark-header">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-cyan-500" />
+                          <span className="text-slate-900 dark:text-white font-bold text-sm">PROJECTS</span>
+                        </div>
+                      </th>
+                      <th id="col-contact" className="py-3.5 px-6 border-r border-slate-200 dark:border-dark-border min-w-[540px] max-w-[580px] bg-slate-100 dark:bg-dark-header">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                          <span className="text-slate-900 dark:text-white font-bold text-sm">CONTACT</span>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  {/* Table Body */}
+                  <tbody className="divide-y divide-slate-200 dark:divide-dark-border font-mono text-xs">
+                    {/* ROW 0: Primary Person, Metadata & Refined University Card + 4 Stat Cards */}
+                    <tr className="hover:bg-slate-100/60 dark:hover:bg-dark-hover transition-colors">
+                      <td className="py-5 px-4 border-r border-slate-200 dark:border-dark-border text-center text-slate-500 dark:text-slate-400 font-mono font-bold bg-slate-100/40 dark:bg-dark-card/40 text-sm">0</td>
+
+                      {/* ROW 0 ABOUT CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <div className="p-4 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-4">
+                          <div className="flex items-center gap-3.5 border-b border-slate-100 dark:border-dark-border pb-3.5">
+                            <img
+                              src="./profile.png"
+                              alt="Tarini Agarwal"
+                              className="w-14 h-14 rounded-full object-cover border-2 border-emerald-500 shadow-md shrink-0"
+                            />
+                            <div className="space-y-0.5">
+                              <h2 className="font-sans font-extrabold text-lg text-slate-900 dark:text-white tracking-tight">
+                                {highlightText(DATASET.about.name)}
+                              </h2>
+                              <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">
+                                {highlightText(DATASET.about.tagline)}
+                              </div>
+                              <div className="text-2xs font-semibold text-slate-500 dark:text-slate-400 font-mono">
+                                {highlightText(DATASET.about.subTagline)}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="space-y-2">
+                            <div className="text-2xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                              Metadata
+                            </div>
+                            <div className="grid grid-cols-1 gap-1 text-2xs font-mono">
+                              {DATASET.about.metadata.map(m => (
+                                <div key={m.label} className="flex justify-between items-center py-0.5 border-b border-slate-50 dark:border-dark-border/40 last:border-none">
+                                  <span className="text-slate-500 dark:text-slate-400">{m.label}:</span>
+                                  <span className="text-slate-900 dark:text-slate-100 font-semibold">{m.value}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* ROW 0 EDUCATION CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <div className="space-y-3">
+                          <div className="p-4 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-3 font-sans">
+                            {/* University Header with Official USAR Logo & Clear Hierarchy */}
+                            <div className="flex items-center justify-between gap-3 border-b border-slate-100 dark:border-dark-border pb-3">
+                              <div className="space-y-1">
+                                <div className="text-2xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                                  UNDERGRADUATE DEGREE
+                                </div>
+                                <h3 className="font-sans font-extrabold text-base text-slate-900 dark:text-white leading-snug tracking-tight">
+                                  {highlightText(DATASET.education.university.degree)}
+                                </h3>
+                                <div className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans">
+                                  {highlightText(DATASET.education.university.institution)}
+                                </div>
+                                <div className="text-2xs text-slate-500 dark:text-slate-400 font-mono">
+                                  {DATASET.education.university.period} • {DATASET.education.university.location}
+                                </div>
+                              </div>
+
+                              <div className="w-14 h-14 rounded-xl bg-white dark:bg-dark-surface border border-slate-200 dark:border-dark-border p-1 flex items-center justify-center shrink-0 shadow-xs">
+                                <img
+                                  src="./usar_logo.png"
+                                  alt="USAR Logo"
+                                  className="w-full h-full object-contain"
+                                />
+                              </div>
+                            </div>
+
+                            {/* CORE FOCUS LINE */}
+                            <div className="font-mono text-2xs text-slate-700 dark:text-slate-300 pt-0.5">
+                              <span className="font-bold text-slate-900 dark:text-white uppercase tracking-wider">CORE FOCUS: </span>
+                              <span className="font-semibold text-teal-600 dark:text-teal-400">Machine Learning • Data Analysis • Computer Vision</span>
+                            </div>
+                          </div>
+
+                          {/* 4 Clean Recruiter Metric Cards */}
+                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono">
+                            <div className="p-2.5 sm:p-3 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-0.5 text-center">
+                              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold uppercase">Cumulative CGPA</div>
+                              <div className="text-base font-extrabold text-emerald-600 dark:text-emerald-400">{DATASET.education.stats.cgpa}</div>
+                              <div className="text-[9px] text-emerald-600/90 dark:text-emerald-400/90 font-medium">{DATASET.education.stats.percentage} Agg.</div>
+                            </div>
+                            <div className="p-2.5 sm:p-3 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-0.5 text-center">
+                              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold uppercase">Highest SGPA</div>
+                              <div className="text-base font-extrabold text-blue-600 dark:text-blue-400">{DATASET.education.stats.highestSgpa}</div>
+                              <div className="text-[9px] text-slate-400">Semester 4</div>
+                            </div>
+                            <div className="p-2.5 sm:p-3 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-0.5 text-center">
+                              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold uppercase">Current Sem</div>
+                              <div className="text-base font-extrabold text-purple-600 dark:text-purple-400">{DATASET.education.stats.currentSem}</div>
+                              <div className="text-[9px] text-slate-400">Year 3 • In Progress</div>
+                            </div>
+                            <div className="p-2.5 sm:p-3 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-0.5 text-center">
+                              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold uppercase">Total Credits</div>
+                              <div className="text-base font-extrabold text-teal-600 dark:text-teal-400">{DATASET.education.stats.completedCredits}</div>
+                              <div className="text-[9px] text-teal-600/90 dark:text-teal-400/90 font-medium">0 Backlogs (Sem 1–4)</div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* ROW 0 SKILLS CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <PrimarySkillsSection highlightText={highlightText} />
+                      </td>
+
+                      {/* ROW 0 EXPERIENCE CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <div className="space-y-2 font-sans">
+                          {/* SECTION HEADER */}
+                          <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-dark-border pb-1">
+                            <span className="font-bold text-slate-800 dark:text-slate-200">INTERNSHIP</span>
+                            <span className="text-orange-600 dark:text-orange-400 font-semibold font-mono text-[10px]">1 ROLE</span>
+                          </div>
+
+                          <div className="space-y-3 pt-0.5">
+                            <div className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-1">
+                              <div className="font-semibold text-xs text-slate-900 dark:text-white font-sans">{highlightText(DATASET.experience[0].role)}</div>
+                              <div className="text-2xs text-orange-600 dark:text-orange-400 font-mono font-semibold">{highlightText(DATASET.experience[0].organization)}</div>
+                              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">{DATASET.experience[0].period}</div>
+                              <ul className="space-y-1.5 pt-2 text-xs font-sans text-slate-700 dark:text-slate-300 list-disc list-inside leading-relaxed">
+                                {DATASET.experience[0].bullets.map((b, i) => <li key={i}>{highlightText(b)}</li>)}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* ROW 0 PROJECTS CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top space-y-3">
+                        <div className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-1 text-center h-[120px] max-h-[120px] flex flex-col justify-center items-center">
+                          <div className="text-3xl leading-none">{DATASET.achievements[0].icon}</div>
+                          <div className="font-bold text-xs text-slate-900 dark:text-white font-sans">{highlightText(DATASET.achievements[0].title)}</div>
+                          <div className="text-2xs text-amber-600 dark:text-amber-400 font-mono font-semibold">{highlightText(DATASET.achievements[0].sub)}</div>
+                          <div className="text-2xs text-slate-500 dark:text-slate-400 font-mono">{DATASET.achievements[0].year}</div>
+                        </div>
+
+                        <div
+                          onClick={() => setSelectedProject(DATASET.projects[0])}
+                          className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border hover:border-cyan-500 dark:hover:border-cyan-400 transition-all cursor-pointer space-y-2 group shadow-2xs h-[175px] max-h-[175px] flex flex-col justify-between"
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/30 flex items-center justify-center text-xl shrink-0 text-cyan-600 dark:text-cyan-400">
+                                {DATASET.projects[0].icon}
+                              </div>
+                              <div>
+                                <div className="font-bold text-xs text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors font-sans">{highlightText(DATASET.projects[0].name)}</div>
+                                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">{DATASET.projects[0].subtitle}</div>
+                              </div>
+                            </div>
+
+                            <span className="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-500/40 text-[10px] font-mono font-bold text-cyan-700 dark:text-cyan-300 group-hover:bg-cyan-600 group-hover:text-white transition-all shadow-2xs shrink-0 flex items-center gap-1">
+                              <span>Click to Expand</span>
+                              <span>↗</span>
+                            </span>
+                          </div>
+
+                          <div className="flex flex-wrap gap-1">
+                            {DATASET.projects[0].tags.map(t => (
+                              <span key={t} className="px-2 py-0.5 rounded bg-cyan-50 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 text-[9px] font-mono border border-cyan-200 dark:border-cyan-500/30">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+
+                          <div className="text-2xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold">{DATASET.projects[0].award}</div>
+                          <p className="text-xs font-sans text-slate-700 dark:text-slate-300 line-clamp-2">{DATASET.projects[0].shortDesc}</p>
+                        </div>
+                      </td>
+
+                      {/* ROW 0 CONTACT CELL — EXPANDED UNIFIED CONTACT SIDEBAR CARD (ROWSPAN=3) */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top" rowSpan={3}>
+                        <ExpandedContactCard
+                          contact={DATASET.contact}
+                          onOpenResume={onOpenResume}
+                          highlightText={highlightText}
+                        />
+                      </td>
+                    </tr>
+
+                    {/* ROW 1 */}
+                    <tr className="hover:bg-slate-100/60 dark:hover:bg-dark-hover transition-colors">
+                      <td className="py-5 px-4 border-r border-slate-200 dark:border-dark-border text-center text-slate-500 dark:text-slate-400 font-mono font-bold bg-slate-100/40 dark:bg-dark-card/40 text-sm">1</td>
+
+                      {/* ROW 1 ABOUT CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <div className="about-me-card p-6 sm:p-7 rounded-2xl space-y-3.5 font-sans h-full min-h-[160px] flex flex-col justify-center transition-all">
+                          <div className="text-base font-mono font-bold text-[#0d9488] dark:text-[#2dd4bf] uppercase tracking-wider border-b border-[#0d9488]/30 dark:border-[#2dd4bf]/30 pb-2.5">
+                            ABOUT ME
+                          </div>
+                          <p className="text-sm text-[#1a2332] dark:text-slate-200 leading-[1.7] font-sans pt-1 max-w-prose">
+                            I turn business data into actionable insights using <span className="text-[#0d9488] dark:text-[#2dd4bf] font-bold">machine learning</span>, <span className="text-[#0d9488] dark:text-[#2dd4bf] font-bold">data analysis</span>, and <span className="text-[#0d9488] dark:text-[#2dd4bf] font-bold">computer vision</span>. I build practical tools that uncover hidden patterns, support better decisions, and solve real problems.
+                          </p>
+                        </div>
+                      </td>
+
+                      {/* ROW 1 EDUCATION CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <SemesterProgressChart sems={DATASET.education.semesters} />
+                      </td>
+
+                      {/* ROW 1 SKILLS CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <SecondarySkillsSection highlightText={highlightText} />
+                      </td>
+
+                      {/* ROW 1 EXPERIENCE CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <div className="space-y-2 font-sans">
+                          {/* SECTION HEADER */}
+                          <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-dark-border pb-1">
+                            <span className="font-bold text-slate-700 dark:text-slate-300">LEADERSHIP AND COMMUNITY</span>
+                            <span className="text-orange-600 dark:text-orange-400 font-semibold font-mono text-[10px]">2 ROLES</span>
+                          </div>
+
+                          <div className="space-y-3 pt-0.5">
+                            <div className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-1">
+                              <div className="font-semibold text-xs text-slate-900 dark:text-white font-sans">{highlightText(DATASET.experience[1].role)}</div>
+                              <div className="text-2xs text-orange-600 dark:text-orange-400 font-mono font-semibold">{highlightText(DATASET.experience[1].organization)}</div>
+                              <p className="text-xs font-sans text-slate-700 dark:text-slate-300 pt-1">{highlightText(DATASET.experience[1].desc)}</p>
+                            </div>
+
+                            <div className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-1">
+                              <div className="font-semibold text-xs text-slate-900 dark:text-white font-sans">{highlightText(DATASET.experience[2].role)}</div>
+                              <div className="text-2xs text-orange-600 dark:text-orange-400 font-mono font-semibold">{highlightText(DATASET.experience[2].organization)}</div>
+                              <p className="text-xs font-sans text-slate-700 dark:text-slate-300 pt-1">{highlightText(DATASET.experience[2].desc)}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* ROW 1 PROJECTS CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top space-y-2">
+                        <div className="px-3 py-1.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs flex items-center justify-between font-mono text-2xs">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm leading-none">{DATASET.achievements[1].icon}</span>
+                            <span className="font-bold text-slate-900 dark:text-white font-sans">{highlightText(DATASET.achievements[1].title)}, {highlightText(DATASET.achievements[1].sub)}</span>
+                          </div>
+                          <span className="text-slate-500 dark:text-slate-400 font-mono text-[10px]">{DATASET.achievements[1].year}</span>
+                        </div>
+
+                        <div
+                          onClick={() => setSelectedProject(DATASET.projects[1])}
+                          className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border hover:border-cyan-500 dark:hover:border-cyan-400 transition-all cursor-pointer space-y-2 group shadow-2xs"
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/30 flex items-center justify-center text-xl shrink-0 text-cyan-600 dark:text-cyan-400">
+                                {DATASET.projects[1].icon}
+                              </div>
+                              <div>
+                                <div className="font-bold text-xs text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors font-sans">{highlightText(DATASET.projects[1].name)}</div>
+                                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">{DATASET.projects[1].subtitle}</div>
+                              </div>
+                            </div>
+
+                            <span className="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-500/40 text-[10px] font-mono font-bold text-cyan-700 dark:text-cyan-300 group-hover:bg-cyan-600 group-hover:text-white transition-all shadow-2xs shrink-0 flex items-center gap-1">
+                              <span>Click to Expand</span>
+                              <span>↗</span>
+                            </span>
+                          </div>
+
+                          <div className="flex flex-wrap gap-1">
+                            {DATASET.projects[1].tags.map(t => (
+                              <span key={t} className="px-2 py-0.5 rounded bg-cyan-50 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 text-[9px] font-mono border border-cyan-200 dark:border-cyan-500/30">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+
+                          <div className="text-2xs font-mono text-cyan-700 dark:text-cyan-400 font-semibold">{DATASET.projects[1].award}</div>
+                          <p className="text-xs font-sans text-slate-700 dark:text-slate-300 leading-relaxed">{DATASET.projects[1].shortDesc}</p>
+                        </div>
+                      </td>
+                    </tr>
+
+                    {/* ROW 2 */}
+                    <tr className="hover:bg-slate-100/60 dark:hover:bg-dark-hover transition-colors">
+                      <td className="py-3 px-4 border-r border-slate-200 dark:border-dark-border text-center text-slate-500 dark:text-slate-400 font-mono font-bold bg-slate-100/40 dark:bg-dark-card/40 text-sm">2</td>
+
+                      {/* ROW 2 ABOUT CELL */}
+                      <td className="py-3 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <EditorialWordCloud />
+                      </td>
+
+                      {/* ROW 2 EDUCATION CELL */}
+                      <td className="py-3 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <div className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-3 font-sans">
+                          <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-dark-border pb-1.5">
+                            <span className="font-bold text-slate-700 dark:text-slate-200">SCHOOL EDUCATION</span>
+                            <span className="text-slate-500 dark:text-slate-400">{DATASET.education.school.period}</span>
+                          </div>
+
+                          <div className="space-y-1.5">
+                            <div className="font-bold text-sm text-slate-900 dark:text-white leading-snug">
+                              {highlightText(DATASET.education.school.institution)}
+                            </div>
+                            <div className="text-xs text-blue-600 dark:text-blue-400 font-semibold font-mono">
+                              {DATASET.education.school.board} • {DATASET.education.school.stream}
+                            </div>
+                            <div className="flex items-center justify-between pt-1 font-mono text-xs">
+                              <span className="text-slate-600 dark:text-slate-400">Class 12 Percentage:</span>
+                              <span className="font-extrabold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-500/30 px-2.5 py-0.5 rounded-lg">
+                                {DATASET.education.school.percentage}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* ROW 2 SKILLS CELL */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <ProfessionalSkillsAndLanguages
+                          profSkills={DATASET.skills.professionalSkills}
+                          languages={DATASET.skills.languages}
+                          highlightText={highlightText}
+                        />
+                      </td>
+
+                      {/* ROW 2 EXPERIENCE CELL — CERTIFICATES SECTION */}
+                      <td className="py-5 px-6 border-r border-slate-200 dark:border-dark-border align-top">
+                        <CertificatesListSection
+                          certificates={DATASET.certificates}
+                          onSelectCert={onSelectCert}
+                          highlightText={highlightText}
+                          isHighlighted={isCertHighlighted}
+                        />
+                      </td>
+
+                      {/* ROW 2 PROJECTS CELL */}
+                      <td className="py-3 px-6 border-r border-slate-200 dark:border-dark-border align-top space-y-3">
+                        <div className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border shadow-2xs space-y-1 text-center h-[120px] max-h-[120px] flex flex-col justify-center items-center">
+                          <div className="text-3xl leading-none">{DATASET.achievements[2].icon}</div>
+                          <div className="font-bold text-xs text-slate-900 dark:text-white font-sans">{highlightText(DATASET.achievements[2].title)}</div>
+                          <div className="text-2xs text-amber-600 dark:text-amber-400 font-mono font-semibold">{highlightText(DATASET.achievements[2].sub)}</div>
+                          <div className="text-2xs text-slate-500 dark:text-slate-400 font-mono">{DATASET.achievements[2].year}</div>
+                        </div>
+
+                        <div
+                          onClick={() => setSelectedProject(DATASET.projects[2])}
+                          className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-dark-border hover:border-cyan-500 dark:hover:border-cyan-400 transition-all cursor-pointer space-y-2 group shadow-2xs h-[175px] max-h-[175px] flex flex-col justify-between"
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/30 flex items-center justify-center text-xl shrink-0 text-cyan-600 dark:text-cyan-400">
+                                {DATASET.projects[2].icon}
+                              </div>
+                              <div>
+                                <div className="font-bold text-xs text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors font-sans">{highlightText(DATASET.projects[2].name)}</div>
+                                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">{DATASET.projects[2].subtitle}</div>
+                              </div>
+                            </div>
+
+                            <span className="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-500/40 text-[10px] font-mono font-bold text-cyan-700 dark:text-cyan-300 group-hover:bg-cyan-600 group-hover:text-white transition-all shadow-2xs shrink-0 flex items-center gap-1">
+                              <span>Click to Expand</span>
+                              <span>↗</span>
+                            </span>
+                          </div>
+
+                          <div className="flex flex-wrap gap-1">
+                            {DATASET.projects[2].tags.map(t => (
+                              <span key={t} className="px-2 py-0.5 rounded bg-cyan-50 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 text-[9px] font-mono border border-cyan-200 dark:border-cyan-500/30">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+
+                          <div className="text-2xs font-mono text-purple-700 dark:text-purple-400 font-semibold">{DATASET.projects[2].award}</div>
+                          <p className="text-xs font-sans text-slate-700 dark:text-slate-300 line-clamp-2">{DATASET.projects[2].shortDesc}</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </main>
+        </div>
+      );
+    }
+
+    // --- MAIN APP COMPONENT ---
+    function App() {
+      const [screen, setScreen] = useState(1);
+      const [isDark, setIsDark] = useState(false);
+      const [selectedCert, setSelectedCert] = useState(null);
+      const [currentView, setCurrentView] = useState('dataset'); // 'dataset', 'resume'
+
+      const toggleTheme = () => {
+        const nextDark = !isDark;
+        setIsDark(nextDark);
+        if (nextDark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+      };
+
+      const handleSelectCert = (cert) => {
+        setSelectedCert(cert);
+      };
+
+      const handleBackToDataset = () => {
+        setSelectedCert(null);
+        setCurrentView('dataset');
+      };
+
+      return (
+        <React.Fragment>
+          {selectedCert ? (
+            <ScreenCertificateDetail
+              cert={selectedCert}
+              onBack={handleBackToDataset}
+              highlightText={(txt) => txt}
+            />
+          ) : currentView === 'resume' ? (
+            <ScreenResume onBack={handleBackToDataset} />
+          ) : (
+            <React.Fragment>
+              {screen === 1 && <Screen1 onRun={() => setScreen(2)} isDark={isDark} onToggleTheme={toggleTheme} />}
+              {screen === 2 && <Screen2 onComplete={() => setScreen(3)} />}
+              {screen === 3 && (
+                <Screen3
+                  isDark={isDark}
+                  onToggleTheme={toggleTheme}
+                  onSelectCert={handleSelectCert}
+                  onOpenResume={() => setCurrentView('resume')}
+                />
+              )}
+            </React.Fragment>
+          )}
+        </React.Fragment>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
